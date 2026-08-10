@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>טיול סלובקיה ופולין 2026 - צח בוכריס</title>
+<title>טיול סלובקיה ופולין 2026 - צחי בוכריס</title>
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#2D6A4F">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -293,15 +293,14 @@
   <button class="tab-btn" onclick="switchTab('map')"><span>🗺️</span><span>מפה</span></button>
 </nav>
 
-<!-- PAGE 1: ITINERARY -->
+<!-- PAGE 1: ITINERARY WITH ALL 14 DAYS & INLINE THUMBNAILS -->
 <div id="page-trip" class="page active">
   <div class="hero">
     <div class="hero-flag">🇸🇰 🇵🇱</div>
-    <h1>מסלול הטיול – 15 ימים</h1>
-    <p>16 אוגוסט – 30 אוגוסט 2026 • משפחת בוכריס</p>
+    <h1>מסלול הטיול – 14 ימים</h1>
+    <p>17 אוגוסט – 30 אוגוסט 2026 • משפחת בוכריס</p>
     <div class="hero-tags">
       <span class="tag">✈️ ברטיסלבה</span>
-      <span class="tag">🏰 טירת אוראבה</span>
       <span class="tag">🏔️ טטרות</span>
       <span class="tag">🎢 אנרג'ילנדיה</span>
       <span class="tag">🏰 זאקופנה וקרקוב</span>
@@ -333,53 +332,24 @@
     <div class="section-line"></div>
   </div>
 
-  <!-- יום 0 -->
-  <div class="day-card" id="day-card-0">
-    <div class="day-header sk">
-      <div><div class="day-num">יום יציאה</div><div class="day-date">16/08 ראשון</div></div>
-      <div class="day-title">המראה מישראל ונחיתה בברטיסלבה</div>
-    </div>
-    <div class="activity">
-      <img class="act-thumb" src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=120" alt="Flight">
-      <div class="act-time">22:00</div>
-      <div class="act-content">
-        <div class="act-name">✈️ המראה מנתב"ג ונחיתה לפנות בוקר בברטיסלבה</div>
-        <div class="act-note">איסוף הרכב השכור והגעה למלון הסמוך לשדה התעופה</div>
-      </div>
-    </div>
-    <div class="day-photos-container">
-      <div class="day-photos-title"><span>📷 תמונות מיום היציאה</span><button class="upload-photo-btn" onclick="uploadCloudPhoto(0)">📷 העלה תמונה מהגלריה</button></div>
-      <div class="photo-grid" id="photo-grid-0"></div>
-    </div>
-  </div>
-
   <!-- יום 1 -->
   <div class="day-card" id="day-card-1">
     <div class="day-header sk">
       <div><div class="day-num">יום 1</div><div class="day-date">17/08 שני</div></div>
-      <div class="day-title">טירת אוראבה ונסיעה לבייסטרה</div>
+      <div class="day-title">נחיתה ונסיעה לבייסטרה</div>
     </div>
     <div class="activity">
       <img class="act-thumb" src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=120" alt="Bratislava Hotel">
       <div class="act-time">06:00</div>
       <div class="act-content">
-        <div class="act-name">מנוחה במלון AVIATOR GARNY BRATISLAVA</div>
-        <div class="act-note">שינה קלה וארוחת בוקר להתאוששות מהטיסה</div>
+        <div class="act-name">נחיתה לפנות בוקר בברטיסלבה והגעה למלון</div>
+        <div class="act-note">AVIATOR GARNY HOTEL BRATISLAVA • מנוחה ושינה קלה</div>
       </div>
       <a class="act-nav" href="https://waze.com/ul?q=AVIATOR+GARNY+HOTEL+BRATISLAVA" target="_blank">וויז</a>
     </div>
     <div class="activity">
-      <img class="act-thumb" src="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?w=120" alt="Orava Castle">
-      <div class="act-time">12:00</div>
-      <div class="act-content">
-        <div class="act-name">🏰 עצירה בטירת אוראבה (Orava Castle)</div>
-        <div class="act-note">סיור בטירה המרהיבה הבנויה על צוק סלע נישא מעל הנהר</div>
-      </div>
-      <a class="act-nav" href="https://waze.com/ul?q=Orava+Castle+Slovakia" target="_blank">וויז</a>
-    </div>
-    <div class="activity">
       <img class="act-thumb" src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=120" alt="Bystra">
-      <div class="act-time">16:00</div>
+      <div class="act-time">13:00</div>
       <div class="act-content">
         <div class="act-name">נסיעה לבית הנופש ב-BYSTRA PODHALANSKA</div>
         <div class="act-note">התארגנות בבית, מנוחה והצטיידות ראשונית</div>
@@ -387,7 +357,10 @@
       <a class="act-nav" href="https://waze.com/ul?q=Bystra+Podhalanska+Poland" target="_blank">וויז</a>
     </div>
     <div class="day-photos-container">
-      <div class="day-photos-title"><span>📷 תמונות מיום 1</span><button class="upload-photo-btn" onclick="uploadCloudPhoto(1)">📷 העלה תמונה מהגלריה</button></div>
+      <div class="day-photos-title">
+        <span>📷 תמונות מיום 1</span>
+        <button class="upload-photo-btn" onclick="uploadCloudPhoto(1)">📷 העלה תמונה מהגלריה</button>
+      </div>
       <div class="photo-grid" id="photo-grid-1"></div>
     </div>
   </div>
@@ -417,7 +390,10 @@
       <a class="act-nav" href="https://waze.com/ul?q=Terma+Bania+Bialka+Tatrzanska" target="_blank">וויז</a>
     </div>
     <div class="day-photos-container">
-      <div class="day-photos-title"><span>📷 תמונות מיום 2</span><button class="upload-photo-btn" onclick="uploadCloudPhoto(2)">📷 העלה תמונה מהגלריה</button></div>
+      <div class="day-photos-title">
+        <span>📷 תמונות מיום 2</span>
+        <button class="upload-photo-btn" onclick="uploadCloudPhoto(2)">📷 העלה תמונה מהגלריה</button>
+      </div>
       <div class="photo-grid" id="photo-grid-2"></div>
     </div>
   </div>
@@ -744,7 +720,7 @@
   </div>
 </div>
 
-<!-- OTHER PAGES REMAIN THE SAME -->
+<!-- OTHER PAGES -->
 <div id="page-hotels" class="page">
   <div class="hero">
     <div class="hero-flag">🏨</div>
@@ -800,7 +776,7 @@
       <div class="item-header">
         <div>
           <div class="item-title">🏨 Aviator Garni Hotel Bratislava</div>
-          <div class="item-sub">ברטיסלבה • 16/08, 17/08 & 29/08 (3 לילות)</div>
+          <div class="item-sub">ברטיסלבה • 17/08 & 29/08 (2 לילות)</div>
         </div>
         <a class="act-nav" href="https://waze.com/ul?q=AVIATOR+GARNY+HOTEL+BRATISLAVA" target="_blank">וויז</a>
       </div>
@@ -927,17 +903,6 @@
   </div>
 
   <div class="section-header"><span class="section-flag">🇸🇰</span><span class="section-title">סלובקיה – פארקים וטבע</span><div class="section-line"></div></div>
-  <div class="item-card">
-    <div class="item-card-main">
-      <img class="item-thumb" src="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?w=150" alt="Orava Castle">
-      <div class="item-header">
-        <div><div class="item-title">🏰 טירת אוראבה (Orava Castle)</div><div class="item-sub">📍 אורבסקי פודזאמוק</div></div>
-        <a class="act-nav" href="https://waze.com/ul?q=Orava+Castle+Slovakia" target="_blank">וויז</a>
-      </div>
-    </div>
-    <div class="item-desc">אחת הטירות היפות והשמורות בסלובקיה, הממוקמת בראש צוק סלע נישא מעל נהר אוראבה.</div>
-  </div>
-
   <div class="item-card">
     <div class="item-card-main">
       <img class="item-thumb" src="https://images.unsplash.com/photo-1582650625119-3a31f8fa2699?w=150" alt="Tatralandia">
@@ -1195,6 +1160,27 @@
   </div>
 </div>
 
+<!-- Lightbox Modal for Photo Gallery -->
+<div id="lightbox-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.92); z-index:9999; flex-direction:column; justify-content:space-between; align-items:center; padding:20px 10px;">
+  <div style="width:100%; display:flex; justify-content:space-between; align-items:center; color:#fff; font-size:14px; padding:0 10px;">
+    <span id="lightbox-counter">1 / 1</span>
+    <div style="display:flex; gap:12px;">
+      <button onclick="deleteCurrentPhoto()" style="background:#C0392B; color:#fff; border:none; padding:6px 12px; border-radius:8px; font-weight:bold; cursor:pointer; font-family:'Heebo';">🗑️ מחק תמונה</button>
+      <button onclick="closeLightbox()" style="background:#2A3A4A; color:#fff; border:none; padding:6px 14px; border-radius:8px; font-weight:bold; cursor:pointer; font-size:16px;">✕</button>
+    </div>
+  </div>
+  
+  <div style="flex:1; display:flex; align-items:center; justify-content:center; width:100%; position:relative; overflow:hidden;">
+    <button onclick="prevPhoto()" style="position:absolute; left:10px; background:rgba(255,255,255,0.2); color:#fff; border:none; font-size:24px; padding:10px 15px; border-radius:50%; cursor:pointer; z-index:10;">‹</button>
+    <img id="lightbox-img" src="" style="max-width:95%; max-height:80vh; object-fit:contain; border-radius:10px; transition:transform 0.2s;" />
+    <button onclick="nextPhoto()" style="position:absolute; right:10px; background:rgba(255,255,255,0.2); color:#fff; border:none; font-size:24px; padding:10px 15px; border-radius:50%; cursor:pointer; z-index:10;">›</button>
+  </div>
+
+  <div style="color:var(--sub); font-size:12px; text-align:center; margin-bottom:10px;">
+    לחץ על חצים כדי לדפדף
+  </div>
+</div>
+
 <footer>
   🇨🇿 🇸🇰 🇵🇱 טיול סלובקיה ופולין 2026 • שנזכה לנסיעות טובות!
 </footer>
@@ -1271,7 +1257,6 @@
 
     const locations = [
       { name: "✈️ נמל תעופה ברטיסלבה", lat: 48.1702, lng: 17.2127 },
-      { name: "🏰 טירת אוראבה (Orava Castle)", lat: 49.2619, lng: 19.3582 },
       { name: "🏡 Bystra Podhalanska (בית נופש 1)", lat: 49.654, lng: 19.762 },
       { name: "🏨 Sloneczne Wzgorze Zator", lat: 49.996, lng: 19.435 },
       { name: "🏡 Dovolenkovy Dom Vranka", lat: 49.083, lng: 19.615 },
@@ -1307,7 +1292,6 @@
       const originalText = btn ? btn.textContent : '';
       if (btn) btn.textContent = '⏳ מעבד תמונה...';
 
-      // Compress and convert to Data URL for instant, bulletproof local display from device gallery
       const reader = new FileReader();
       reader.onload = function(event) {
         const img = new Image();
@@ -1315,7 +1299,7 @@
           const canvas = document.createElement('canvas');
           let width = img.width;
           let height = img.height;
-          const max_size = 800; // Compress image to fit nicely in storage and render fast
+          const max_size = 800;
 
           if (width > height) {
             if (width > max_size) {
@@ -1349,6 +1333,64 @@
     input.click();
   }
 
+  let currentLightboxDay = null;
+  let currentPhotoIndex = 0;
+
+  function openLightbox(dayNum, idx) {
+    currentLightboxDay = dayNum;
+    currentPhotoIndex = idx;
+    updateLightbox();
+    const modal = document.getElementById('lightbox-modal');
+    modal.style.display = 'flex';
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox-modal').style.display = 'none';
+  }
+
+  function updateLightbox() {
+    const photos = JSON.parse(localStorage.getItem('trip_photos_day_' + currentLightboxDay) || '[]');
+    if (photos.length === 0) {
+      closeLightbox();
+      return;
+    }
+    if (currentPhotoIndex >= photos.length) currentPhotoIndex = photos.length - 1;
+    if (currentPhotoIndex < 0) currentPhotoIndex = 0;
+
+    document.getElementById('lightbox-img').src = photos[currentPhotoIndex];
+    document.getElementById('lightbox-counter').textContent = (currentPhotoIndex + 1) + ' / ' + photos.length;
+  }
+
+  function prevPhoto() {
+    const photos = JSON.parse(localStorage.getItem('trip_photos_day_' + currentLightboxDay) || '[]');
+    if (currentPhotoIndex > 0) {
+      currentPhotoIndex--;
+      updateLightbox();
+    }
+  }
+
+  function nextPhoto() {
+    const photos = JSON.parse(localStorage.getItem('trip_photos_day_' + currentLightboxDay) || '[]');
+    if (currentPhotoIndex < photos.length - 1) {
+      currentPhotoIndex++;
+      updateLightbox();
+    }
+  }
+
+  function deleteCurrentPhoto() {
+    if (!confirm('האם למחוק תמונה זו?')) return;
+    let photos = JSON.parse(localStorage.getItem('trip_photos_day_' + currentLightboxDay) || '[]');
+    photos.splice(currentPhotoIndex, 1);
+    localStorage.setItem('trip_photos_day_' + currentLightboxDay, JSON.stringify(photos));
+    renderPhotosForDay(currentLightboxDay);
+    if (photos.length === 0) {
+      closeLightbox();
+    } else {
+      if (currentPhotoIndex >= photos.length) currentPhotoIndex = photos.length - 1;
+      updateLightbox();
+    }
+  }
+
   function renderPhotosForDay(dayNum) {
     const grid = document.getElementById('photo-grid-' + dayNum);
     if (!grid) return;
@@ -1358,6 +1400,8 @@
     photos.forEach((imgUrl, idx) => {
       const item = document.createElement('div');
       item.className = 'photo-item';
+      item.style.cursor = 'pointer';
+      item.onclick = function() { openLightbox(dayNum, idx); };
       item.innerHTML = `<img src="${imgUrl}" alt="תמונה">`;
       grid.appendChild(item);
     });
@@ -1383,7 +1427,7 @@
       wrapper.appendChild(gmapBtn);
     });
 
-    for (let d = 0; d <= 14; d++) {
+    for (let d = 1; d <= 14; d++) {
       renderPhotosForDay(d);
     }
   });
