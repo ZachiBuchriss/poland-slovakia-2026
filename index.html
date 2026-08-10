@@ -1318,6 +1318,93 @@
     });
   }
 
+  // טעינת כל התמונות מהדרייב בעת פתיחת האפליקציה
+  function loadPhotosFromDrive() {
+    fetch(GOOGLE_SCRIPT_URL)
+      .then(res => res.json())
+      .then(data => {
+        if (data.status === 'success' && data.photos) {
+          for (let dayNum in data.photos) {
+            localStorage.setItem('trip_photos_day_' + dayNum, JSON.stringify(data.photos[dayNum]));
+            renderPhotosForDay(dayNum);
+          }
+        }
+      })
+      .catch(err => console.log('שגיאה בטעינת תמונות מהדרייב'));
+  }
+
+  function uploadCloudPhoto(dayNum) {
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.accept = 'image/*';
+    input.onchange = function(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+
+      const btn = document.querySelector(#day-card-${dayNum} .upload-photo-btn);
+      const originalText = btn ? btn.textContent : '';
+      if (btn) btn.textContent = '⏳ מעלה ל-Google Drive...';
+
+      const reader = new FileReader();
+      reader.onload = function(event) {
+        const img = new Image();
+        img.onload = function() {
+          const canvas = document.createElement('canvas');
+          let width = img.width;
+          let height = img.height;
+          const max_size = 1000;
+
+          if (width > height) {
+            if (width > max_size) {
+              height *= max_size / width;
+              width = max_size;
+            }
+          } else {
+            if (height > max_size) {
+              width *= max_size / height;
+              height = max_size;
+            }
+          }
+
+          canvas.width = width;
+          canvas.height = height;
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(img, 0, 0, width, height);
+          
+          const dataUrl = canvas.toDataURL('image/jpeg', 0.75);
+          const base64Data = dataUrl.split(',')[1];
+
+          const params = new URLSearchParams();
+          params.append('base64', base64Data);
+          params.append('dayNum', dayNum);
+          params.append('mimeType', 'image/jpeg');
+
+          fetch(GOOGLE_SCRIPT_URL, {
+            method: 'POST',
+            body: params
+          })
+          .then(res => res.json())
+          .then(data => {
+            if (data.status === 'success') {
+              alert('🎉 התמונה הועלתה בהצלחה ל-Google Drive!');
+              loadPhotosFromDrive(); // טעינה מחדש של כל התמונות מהדרייב
+            } else {
+              alert('שגיאה מהשרת: ' + data.message);
+            }
+            if (btn) btn.textContent = originalText;
+          })
+          .catch(err => {
+            alert('שגיאה בתקשורת: ' + err);
+            if (btn) btn.textContent = originalText;
+          });
+        };
+        img.src = event.target.result;
+      };
+      reader.readAsDataURL(file);
+    };
+    input.click();
+  }
+
     function uploadCloudPhoto(dayNum) { 
     const input = document.createElement('input');
     input.type = 'file';
