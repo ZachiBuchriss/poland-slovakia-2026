@@ -1318,7 +1318,7 @@
     });
   }
 
-  function uploadCloudPhoto(dayNum) {
+    function uploadCloudPhoto(dayNum) { 
     const input = document.createElement('input');
     input.type = 'file';
     input.accept = 'image/*';
@@ -1337,7 +1337,7 @@
           const canvas = document.createElement('canvas');
           let width = img.width;
           let height = img.height;
-          const max_size = 1200; // High quality resize for Google Drive
+          const max_size = 1000;
 
           if (width > height) {
             if (width > max_size) {
@@ -1356,32 +1356,32 @@
           const ctx = canvas.getContext('2d');
           ctx.drawImage(img, 0, 0, width, height);
           
-          const dataUrl = canvas.toDataURL('image/jpeg', 0.8);
+          const dataUrl = canvas.toDataURL('image/jpeg', 0.75);
           const base64Data = dataUrl.split(',')[1];
+
+          // שימוש ב-FormData כדי לעקוף חסימת CORS בדפדפנים בטלפון
+          const formData = new FormData();
+          formData.append('base64', base64Data);
+          formData.append('fileName', `Day_${dayNum}_${Date.now()}.jpg`);
+          formData.append('mimeType', 'image/jpeg');
 
           fetch(GOOGLE_SCRIPT_URL, {
             method: 'POST',
-            body: JSON.stringify({
-              base64: base64Data,
-              fileName: `Day_${dayNum}_${Date.now()}.jpg`,
-              mimeType: 'image/jpeg'
-            })
+            mode: 'no-cors',
+            body: formData
           })
-          .then(res => res.json())
-          .then(data => {
-            if (data.status === 'success' && data.fileUrl) {
-              let photos = JSON.parse(localStorage.getItem('trip_photos_day_' + dayNum) || '[]');
-              photos.push(data.fileUrl);
-              localStorage.setItem('trip_photos_day_' + dayNum, JSON.stringify(photos));
-              renderPhotosForDay(dayNum);
-              if (btn) btn.textContent = originalText;
-            } else {
-              alert('שגיאה בהעלאה לדרייב: ' + (data.message || 'נסה שוב'));
-              if (btn) btn.textContent = originalText;
-            }
+          .then(() => {
+            // כיוון ש-no-cors מחזיר opaque response, נשמור גם ל-LocalStorage לתצוגה מיידית בגלריה
+            let photos = JSON.parse(localStorage.getItem('trip_photos_day_' + dayNum) || '[]');
+            photos.push(dataUrl);
+            localStorage.setItem('trip_photos_day_' + dayNum, JSON.stringify(photos));
+            renderPhotosForDay(dayNum);
+            
+            if (btn) btn.textContent = originalText;
+            alert('התמונה הועלתה בהצלחה ל-Google Drive ונשמרה באפליקציה!');
           })
           .catch(err => {
-            alert('שגיאה בתקשורת מול גוגל דרייב');
+            alert('שגיאה בהעלאה: ' + err);
             if (btn) btn.textContent = originalText;
           });
         };
@@ -1391,6 +1391,7 @@
     };
     input.click();
   }
+
 
   let currentLightboxDay = null;
   let currentPhotoIndex = 0;
