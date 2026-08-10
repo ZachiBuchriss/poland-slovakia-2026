@@ -1359,29 +1359,31 @@
           const dataUrl = canvas.toDataURL('image/jpeg', 0.75);
           const base64Data = dataUrl.split(',')[1];
 
-          // שימוש ב-FormData כדי לעקוף חסימת CORS בדפדפנים בטלפון
-          const formData = new FormData();
-          formData.append('base64', base64Data);
-          formData.append('fileName', `Day_${dayNum}_${Date.now()}.jpg`);
-          formData.append('mimeType', 'image/jpeg');
+          // שליחת הנתונים ל-Google Apps Script בפורמט המתאים
+          const params = new URLSearchParams();
+          params.append('base64', base64Data);
+          params.append('fileName', `Day_${dayNum}_${Date.now()}.jpg`);
+          params.append('mimeType', 'image/jpeg');
 
           fetch(GOOGLE_SCRIPT_URL, {
             method: 'POST',
-            mode: 'no-cors',
-            body: formData
+            body: params
           })
-          .then(() => {
-            // כיוון ש-no-cors מחזיר opaque response, נשמור גם ל-LocalStorage לתצוגה מיידית בגלריה
-            let photos = JSON.parse(localStorage.getItem('trip_photos_day_' + dayNum) || '[]');
-            photos.push(dataUrl);
-            localStorage.setItem('trip_photos_day_' + dayNum, JSON.stringify(photos));
-            renderPhotosForDay(dayNum);
-            
+          .then(res => res.json())
+          .then(data => {
+            if (data.status === 'success') {
+              let photos = JSON.parse(localStorage.getItem('trip_photos_day_' + dayNum) || '[]');
+              photos.push(dataUrl);
+              localStorage.setItem('trip_photos_day_' + dayNum, JSON.stringify(photos));
+              renderPhotosForDay(dayNum);
+              alert('🎉 התמונה הועלתה בהצלחה ונשמרה ב-Google Drive!');
+            } else {
+              alert('שגיאה מהשרת: ' + data.message);
+            }
             if (btn) btn.textContent = originalText;
-            alert('התמונה הועלתה בהצלחה ל-Google Drive ונשמרה באפליקציה!');
           })
           .catch(err => {
-            alert('שגיאה בהעלאה: ' + err);
+            alert('שגיאה בתקשורת: ' + err);
             if (btn) btn.textContent = originalText;
           });
         };
@@ -1391,6 +1393,7 @@
     };
     input.click();
   }
+
 
 
   let currentLightboxDay = null;
