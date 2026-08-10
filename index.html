@@ -1324,35 +1324,68 @@
 
       const btn = document.querySelector(`#day-card-${dayNum} .upload-photo-btn`);
       const originalText = btn ? btn.textContent : '';
-      if (btn) btn.textContent = '⏳ מעלה לענן...';
+      if (btn) btn.textContent = '⏳ דוחוס ומעלה לענן...';
 
-      const formData = new FormData();
-      formData.append('key', '6d2524a2cd4d70b157d5f7f16fb7d708');
-      formData.append('image', file);
+      const reader = new FileReader();
+      reader.onload = function(event) {
+        const img = new Image();
+        img.onload = function() {
+          const canvas = document.createElement('canvas');
+          let width = img.width;
+          let height = img.height;
+          const max_size = 1000;
 
-      // Upload directly to ImgBB free cloud server
-      fetch('https://api.imgbb.com/1/upload', {
-        method: 'POST',
-        body: formData
-      })
-      .then(res => res.json())
-      .then(data => {
-        if (btn) btn.textContent = originalText;
-        if (data && data.success) {
-          const imageUrl = data.data.url;
-          let photos = JSON.parse(localStorage.getItem('trip_photos_day_' + dayNum) || '[]');
-          photos.push(imageUrl);
-          localStorage.setItem('trip_photos_day_' + dayNum, JSON.stringify(photos));
-          renderPhotosForDay(dayNum);
-          alert('✨ התמונה הועלתה בהצלחה לענן!');
-        } else {
-          alert('שגיאה בהעלאה לענן, נסה תמונה קטנה יותר או קובץ JPG/PNG.');
-        }
-      })
-      .catch(err => {
-        if (btn) btn.textContent = originalText;
-        alert('שגיאה בחיבור לרשת. ודא שיש חיבור אינטרנט פעיל.');
-      });
+          if (width > height) {
+            if (width > max_size) {
+              height *= max_size / width;
+              width = max_size;
+            }
+          } else {
+            if (height > max_size) {
+              width *= max_size / height;
+              height = max_size;
+            }
+          }
+
+          canvas.width = width;
+          canvas.height = height;
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(img, 0, 0, width, height);
+
+          // Get compressed Base64 string (without data:image/jpeg;base64, prefix for ImgBB)
+          const dataUrl = canvas.toDataURL('image/jpeg', 0.8);
+          const base64Data = dataUrl.split(',')[1];
+
+          const formData = new FormData();
+          formData.append('key', '6d2524a2cd4d70b157d5f7f16fb7d708');
+          formData.append('image', base64Data);
+
+          fetch('https://api.imgbb.com/1/upload', {
+            method: 'POST',
+            body: formData
+          })
+          .then(res => res.json())
+          .then(data => {
+            if (btn) btn.textContent = originalText;
+            if (data && data.data && data.data.url) {
+              const imageUrl = data.data.url;
+              let photos = JSON.parse(localStorage.getItem('trip_photos_day_' + dayNum) || '[]');
+              photos.push(imageUrl);
+              localStorage.setItem('trip_photos_day_' + dayNum, JSON.stringify(photos));
+              renderPhotosForDay(dayNum);
+              alert('✨ התמונה הועלתה בהצלחה לענן!');
+            } else {
+              alert('שגיאה בהעלאה. נסה תמונה אחרת.');
+            }
+          })
+          .catch(err => {
+            if (btn) btn.textContent = originalText;
+            alert('שגיאה בחיבור לרשת. נסה שוב.');
+          });
+        };
+        img.src = event.target.result;
+      };
+      reader.readAsDataURL(file);
     };
     input.click();
   }
