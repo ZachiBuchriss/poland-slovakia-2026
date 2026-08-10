@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>טיול סלובקיה ופולין 2026 - צחי בוכריס</title>
+<title>טיול סלובקיה ופולין 2026 - צח בוכריס</title>
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#2D6A4F">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -211,6 +211,7 @@
     align-items: center;
     margin-bottom: 8px;
   }
+  .cloud-btn-group { display: flex; gap: 6px; }
   .upload-photo-btn {
     background: rgba(244,162,97,0.15);
     border: 1px solid var(--accent);
@@ -293,12 +294,12 @@
   <button class="tab-btn" onclick="switchTab('map')"><span>🗺️</span><span>מפה</span></button>
 </nav>
 
-<!-- PAGE 1: ITINERARY WITH ALL 14 DAYS & INLINE THUMBNAILS -->
+<!-- PAGE 1: ITINERARY WITH ALL DAYS -->
 <div id="page-trip" class="page active">
   <div class="hero">
     <div class="hero-flag">🇸🇰 🇵🇱</div>
-    <h1>מסלול הטיול – 14 ימים</h1>
-    <p>17 אוגוסט – 30 אוגוסט 2026 • משפחת בוכריס</p>
+    <h1>מסלול הטיול – 15 ימים</h1>
+    <p>16 אוגוסט – 30 אוגוסט 2026 • משפחת בוכריס</p>
     <div class="hero-tags">
       <span class="tag">✈️ ברטיסלבה</span>
       <span class="tag">🏔️ טטרות</span>
@@ -332,6 +333,30 @@
     <div class="section-line"></div>
   </div>
 
+  <!-- יום 0 -->
+  <div class="day-card" id="day-card-0">
+    <div class="day-header sk">
+      <div><div class="day-num">יום יציאה</div><div class="day-date">16/08 ראשון</div></div>
+      <div class="day-title">המראה מישראל ונחיתה בברטיסלבה</div>
+    </div>
+    <div class="activity">
+      <img class="act-thumb" src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=120" alt="Flight">
+      <div class="act-time">22:00</div>
+      <div class="act-content">
+        <div class="act-name">✈️ המראה מנתב"ג ונחיתה לפנות בוקר בברטיסלבה</div>
+        <div class="act-note">איסוף הרכב השכור והגעה למלון AVIATOR GARNY HOTEL BRATISLAVA</div>
+      </div>
+      <a class="act-nav" href="https://waze.com/ul?q=AVIATOR+GARNY+HOTEL+BRATISLAVA" target="_blank">וויז</a>
+    </div>
+    <div class="day-photos-container">
+      <div class="day-photos-title">
+        <span>📷 תמונות מיום 16/08</span>
+        <button class="upload-photo-btn" onclick="uploadCloudPhoto(0)">☁️ העלה תמונה לענן</button>
+      </div>
+      <div class="photo-grid" id="photo-grid-0"></div>
+    </div>
+  </div>
+
   <!-- יום 1 -->
   <div class="day-card" id="day-card-1">
     <div class="day-header sk">
@@ -359,7 +384,9 @@
     <div class="day-photos-container">
       <div class="day-photos-title">
         <span>📷 תמונות מיום 1</span>
-        <button class="upload-photo-btn" onclick="uploadCloudPhoto(1)">📷 העלה תמונה מהגלריה</button>
+        <div class="cloud-btn-group">
+          <button class="upload-photo-btn" onclick="uploadCloudPhoto(1)">☁️ העלה תמונה לענן</button>
+        </div>
       </div>
       <div class="photo-grid" id="photo-grid-1"></div>
     </div>
@@ -392,7 +419,9 @@
     <div class="day-photos-container">
       <div class="day-photos-title">
         <span>📷 תמונות מיום 2</span>
-        <button class="upload-photo-btn" onclick="uploadCloudPhoto(2)">📷 העלה תמונה מהגלריה</button>
+        <div class="cloud-btn-group">
+          <button class="upload-photo-btn" onclick="uploadCloudPhoto(2)">☁️ העלה תמונה לענן</button>
+        </div>
       </div>
       <div class="photo-grid" id="photo-grid-2"></div>
     </div>
@@ -423,7 +452,7 @@
       <a class="act-nav" href="https://waze.com/ul?q=Krupowki+Zakopane" target="_blank">וויז</a>
     </div>
     <div class="day-photos-container">
-      <div class="day-photos-title"><span>📷 תמונות מיום 3</span><button class="upload-photo-btn" onclick="uploadCloudPhoto(3)">📷 העלה תמונה מהגלריה</button></div>
+      <div class="day-photos-title"><span>📷 תמונות מיום 3</span><button class="upload-photo-btn" onclick="uploadCloudPhoto(3)">☁️ העלה תמונה לענן</button></div>
       <div class="photo-grid" id="photo-grid-3"></div>
     </div>
   </div>
@@ -453,7 +482,7 @@
       <a class="act-nav" href="https://waze.com/ul?q=Czorsztyn+Castle" target="_blank">וויז</a>
     </div>
     <div class="day-photos-container">
-      <div class="day-photos-title"><span>📷 תמונות מיום 4</span><button class="upload-photo-btn" onclick="uploadCloudPhoto(4)">📷 העלה תמונה מהגלריה</button></div>
+      <div class="day-photos-title"><span>📷 תמונות מיום 4</span><button class="upload-photo-btn" onclick="uploadCloudPhoto(4)">☁️ העלה תמונה לענן</button></div>
       <div class="photo-grid" id="photo-grid-4"></div>
     </div>
   </div>
@@ -483,7 +512,7 @@
       <a class="act-nav" href="https://waze.com/ul?q=SLONECZNE+WZGORZE+ZATOR" target="_blank">וויז</a>
     </div>
     <div class="day-photos-container">
-      <div class="day-photos-title"><span>📷 תמונות מיום 5</span><button class="upload-photo-btn" onclick="uploadCloudPhoto(5)">📷 העלה תמונה מהגלריה</button></div>
+      <div class="day-photos-title"><span>📷 תמונות מיום 5</span><button class="upload-photo-btn" onclick="uploadCloudPhoto(5)">☁️ העלה תמונה לענן</button></div>
       <div class="photo-grid" id="photo-grid-5"></div>
     </div>
   </div>
@@ -513,7 +542,7 @@
       <a class="act-nav" href="https://waze.com/ul?q=Bonarka+Krakow" target="_blank">וויז</a>
     </div>
     <div class="day-photos-container">
-      <div class="day-photos-title"><span>📷 תמונות מיום 6</span><button class="upload-photo-btn" onclick="uploadCloudPhoto(6)">📷 העלה תמונה מהגלריה</button></div>
+      <div class="day-photos-title"><span>📷 תמונות מיום 6</span><button class="upload-photo-btn" onclick="uploadCloudPhoto(6)">☁️ העלה תמונה לענן</button></div>
       <div class="photo-grid" id="photo-grid-6"></div>
     </div>
   </div>
@@ -534,7 +563,7 @@
       <a class="act-nav" href="https://waze.com/ul?q=Energylandia+Zator" target="_blank">וויז</a>
     </div>
     <div class="day-photos-container">
-      <div class="day-photos-title"><span>📷 תמונות מיום 7</span><button class="upload-photo-btn" onclick="uploadCloudPhoto(7)">📷 העלה תמונה מהגלריה</button></div>
+      <div class="day-photos-title"><span>📷 תמונות מיום 7</span><button class="upload-photo-btn" onclick="uploadCloudPhoto(7)">☁️ העלה תמונה לענן</button></div>
       <div class="photo-grid" id="photo-grid-7"></div>
     </div>
   </div>
@@ -563,7 +592,7 @@
       <a class="act-nav" href="https://waze.com/ul?q=Dovolenkovy+Dom+Vranka" target="_blank">וויז</a>
     </div>
     <div class="day-photos-container">
-      <div class="day-photos-title"><span>📷 תמונות מיום 8</span><button class="upload-photo-btn" onclick="uploadCloudPhoto(8)">📷 העלה תמונה מהגלריה</button></div>
+      <div class="day-photos-title"><span>📷 תמונות מיום 8</span><button class="upload-photo-btn" onclick="uploadCloudPhoto(8)">☁️ העלה תמונה לענן</button></div>
       <div class="photo-grid" id="photo-grid-8"></div>
     </div>
   </div>
@@ -593,7 +622,7 @@
       <a class="act-nav" href="https://waze.com/ul?q=Besenova+Aquapark" target="_blank">וויז</a>
     </div>
     <div class="day-photos-container">
-      <div class="day-photos-title"><span>📷 תמונות מיום 9</span><button class="upload-photo-btn" onclick="uploadCloudPhoto(9)">📷 העלה תמונה מהגלריה</button></div>
+      <div class="day-photos-title"><span>📷 תמונות מיום 9</span><button class="upload-photo-btn" onclick="uploadCloudPhoto(9)">☁️ העלה תמונה לענן</button></div>
       <div class="photo-grid" id="photo-grid-9"></div>
     </div>
   </div>
@@ -623,7 +652,7 @@
       <a class="act-nav" href="https://waze.com/ul?q=Fun+Park+Ziarce" target="_blank">וויז</a>
     </div>
     <div class="day-photos-container">
-      <div class="day-photos-title"><span>📷 תמונות מיום 10</span><button class="upload-photo-btn" onclick="uploadCloudPhoto(10)">📷 העלה תמונה מהגלריה</button></div>
+      <div class="day-photos-title"><span>📷 תמונות מיום 10</span><button class="upload-photo-btn" onclick="uploadCloudPhoto(10)">☁️ העלה תמונה לענן</button></div>
       <div class="photo-grid" id="photo-grid-10"></div>
     </div>
   </div>
@@ -644,7 +673,7 @@
       <a class="act-nav" href="https://waze.com/ul?q=Aquapark+Tatralandia" target="_blank">וויז</a>
     </div>
     <div class="day-photos-container">
-      <div class="day-photos-title"><span>📷 תמונות מיום 11</span><button class="upload-photo-btn" onclick="uploadCloudPhoto(11)">📷 העלה תמונה מהגלריה</button></div>
+      <div class="day-photos-title"><span>📷 תמונות מיום 11</span><button class="upload-photo-btn" onclick="uploadCloudPhoto(11)">☁️ העלה תמונה לענן</button></div>
       <div class="photo-grid" id="photo-grid-11"></div>
     </div>
   </div>
@@ -664,7 +693,7 @@
       </div>
     </div>
     <div class="day-photos-container">
-      <div class="day-photos-title"><span>📷 תמונות מיום 12</span><button class="upload-photo-btn" onclick="uploadCloudPhoto(12)">📷 העלה תמונה מהגלריה</button></div>
+      <div class="day-photos-title"><span>📷 תמונות מיום 12</span><button class="upload-photo-btn" onclick="uploadCloudPhoto(12)">☁️ העלה תמונה לענן</button></div>
       <div class="photo-grid" id="photo-grid-12"></div>
     </div>
   </div>
@@ -694,7 +723,7 @@
       <a class="act-nav" href="https://waze.com/ul?q=Eurovea+Bratislava" target="_blank">וויז</a>
     </div>
     <div class="day-photos-container">
-      <div class="day-photos-title"><span>📷 תמונות מיום 13</span><button class="upload-photo-btn" onclick="uploadCloudPhoto(13)">📷 העלה תמונה מהגלריה</button></div>
+      <div class="day-photos-title"><span>📷 תמונות מיום 13</span><button class="upload-photo-btn" onclick="uploadCloudPhoto(13)">☁️ העלה תמונה לענן</button></div>
       <div class="photo-grid" id="photo-grid-13"></div>
     </div>
   </div>
@@ -714,13 +743,13 @@
       </div>
     </div>
     <div class="day-photos-container">
-      <div class="day-photos-title"><span>📷 תמונות מיום 14</span><button class="upload-photo-btn" onclick="uploadCloudPhoto(14)">📷 העלה תמונה מהגלריה</button></div>
+      <div class="day-photos-title"><span>📷 תמונות מיום 14</span><button class="upload-photo-btn" onclick="uploadCloudPhoto(14)">☁️ העלה תמונה לענן</button></div>
       <div class="photo-grid" id="photo-grid-14"></div>
     </div>
   </div>
 </div>
 
-<!-- OTHER PAGES -->
+<!-- PAGE 2: HOTELS -->
 <div id="page-hotels" class="page">
   <div class="hero">
     <div class="hero-flag">🏨</div>
@@ -785,6 +814,7 @@
   </div>
 </div>
 
+<!-- PAGE 3: RESTAURANTS BY AREA -->
 <div id="page-restaurants" class="page">
   <div class="hero">
     <div class="hero-flag">🍽️</div>
@@ -895,6 +925,7 @@
   </div>
 </div>
 
+<!-- PAGE 4: ATTRACTIONS -->
 <div id="page-attractions" class="page">
   <div class="hero">
     <div class="hero-flag">🎯</div>
@@ -1048,6 +1079,7 @@
   </div>
 </div>
 
+<!-- PAGE 5: SHOPPING BY AREA -->
 <div id="page-shopping" class="page">
   <div class="hero">
     <div class="hero-flag">🛒</div>
@@ -1115,6 +1147,7 @@
   </div>
 </div>
 
+<!-- PAGE 6: BUDGET -->
 <div id="page-budget" class="page">
   <div class="hero">
     <div class="hero-flag">💰</div>
@@ -1148,6 +1181,7 @@
   </div>
 </div>
 
+<!-- PAGE 7: MAP WITH INTERACTIVE PINS -->
 <div id="page-map" class="page">
   <div class="hero">
     <div class="hero-flag">🗺️</div>
@@ -1290,45 +1324,35 @@
 
       const btn = document.querySelector(`#day-card-${dayNum} .upload-photo-btn`);
       const originalText = btn ? btn.textContent : '';
-      if (btn) btn.textContent = '⏳ מעבד תמונה...';
+      if (btn) btn.textContent = '⏳ מעלה לענן...';
 
-      const reader = new FileReader();
-      reader.onload = function(event) {
-        const img = new Image();
-        img.onload = function() {
-          const canvas = document.createElement('canvas');
-          let width = img.width;
-          let height = img.height;
-          const max_size = 800;
+      const formData = new FormData();
+      formData.append('key', '6d2524a2cd4d70b157d5f7f16fb7d708');
+      formData.append('image', file);
 
-          if (width > height) {
-            if (width > max_size) {
-              height *= max_size / width;
-              width = max_size;
-            }
-          } else {
-            if (height > max_size) {
-              width *= max_size / height;
-              height = max_size;
-            }
-          }
-
-          canvas.width = width;
-          canvas.height = height;
-          const ctx = canvas.getContext('2d');
-          ctx.drawImage(img, 0, 0, width, height);
-          const compressedDataUrl = canvas.toDataURL('image/jpeg', 0.7);
-
+      // Upload directly to ImgBB free cloud server
+      fetch('https://api.imgbb.com/1/upload', {
+        method: 'POST',
+        body: formData
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (btn) btn.textContent = originalText;
+        if (data && data.success) {
+          const imageUrl = data.data.url;
           let photos = JSON.parse(localStorage.getItem('trip_photos_day_' + dayNum) || '[]');
-          photos.push(compressedDataUrl);
+          photos.push(imageUrl);
           localStorage.setItem('trip_photos_day_' + dayNum, JSON.stringify(photos));
           renderPhotosForDay(dayNum);
-
-          if (btn) btn.textContent = originalText;
-        };
-        img.src = event.target.result;
-      };
-      reader.readAsDataURL(file);
+          alert('✨ התמונה הועלתה בהצלחה לענן!');
+        } else {
+          alert('שגיאה בהעלאה לענן, נסה תמונה קטנה יותר או קובץ JPG/PNG.');
+        }
+      })
+      .catch(err => {
+        if (btn) btn.textContent = originalText;
+        alert('שגיאה בחיבור לרשת. ודא שיש חיבור אינטרנט פעיל.');
+      });
     };
     input.click();
   }
@@ -1427,7 +1451,7 @@
       wrapper.appendChild(gmapBtn);
     });
 
-    for (let d = 1; d <= 14; d++) {
+    for (let d = 0; d <= 14; d++) {
       renderPhotosForDay(d);
     }
   });
