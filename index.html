@@ -2475,9 +2475,9 @@
         const text = document.getElementById('journal-text-' + dayNum).value;
         globalJournals[dayNum] = text;
 
-        const btn = event.target;
-        const originalText = btn.textContent;
-        btn.textContent = '⏳ שומר לענן...';
+        const btn = document.querySelector(`#day-card-${dayNum} .save-journal-btn`);
+        const originalText = btn ? btn.textContent : '💾 שמור יומן לענן';
+        if (btn) btn.textContent = '⏳ שומר לענן...';
 
         const params = new URLSearchParams();
         params.append('action', 'saveJournal');
@@ -2490,16 +2490,18 @@
         .then(res => res.json())
         .then(data => {
           if (data.status === 'success') {
-            btn.textContent = '✅ נשמר בהצלחה!';
-            setTimeout(() => { btn.textContent = originalText; }, 2000);
+            if (btn) {
+              btn.textContent = '✅ נשמר בהצלחה!';
+              setTimeout(() => { btn.textContent = originalText; }, 2000);
+            }
           } else {
             alert('שגיאה בשמירה: ' + (data.message || ''));
-            btn.textContent = originalText;
+            if (btn) btn.textContent = originalText;
           }
         })
         .catch(err => {
           alert('שגיאה בתקשורת: ' + err);
-          btn.textContent = originalText;
+          if (btn) btn.textContent = originalText;
         });
       }
 
