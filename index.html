@@ -15,7 +15,7 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
     </script>
     <style>
-      @import url(&#39;https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600;800;900&amp;display=swap&#39;);
+      @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600;800;900&display=swap');
 
       :root {
         --sk: #2D6A4F;
@@ -31,7 +31,7 @@
         --green: #52B788;
       }
 
-      [data-theme=&#34;light&#34;] {
+      [data-theme="light"] {
         --bg: #F7F4EF;
         --card: #FFFFFF;
         --text: #1A1A1A;
@@ -43,7 +43,7 @@
       * { box-sizing: border-box; margin: 0; padding: 0; }
 
       body {
-        font-family: &#39;Heebo&#39;, sans-serif;
+        font-family: 'Heebo', sans-serif;
         background: var(--bg);
         color: var(--text);
         max-width: 520px;
@@ -78,6 +78,7 @@
         display: flex;
         align-items: center;
         gap: 4px;
+        font-family: 'Heebo', sans-serif;
       }
 
       .tab-nav {
@@ -97,7 +98,7 @@
         flex: 1;
         min-width: 62px;
         padding: 10px 4px;
-        font-family: &#39;Heebo&#39;, sans-serif;
+        font-family: 'Heebo', sans-serif;
         font-size: 11px;
         font-weight: 700;
         color: var(--sub);
@@ -138,8 +139,9 @@
         border-bottom: 1px solid var(--border);
         padding: 12px 16px;
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
         gap: 10px;
+        text-align: center;
       }
       .info-item { display: flex; flex-direction: column; gap: 2px; }
       .info-label { font-size: 10px; color: var(--sub); text-transform: uppercase; }
@@ -221,7 +223,7 @@
         justify-content: space-between;
         align-items: center;
         font-size: 12px;
-        font-family: inherit;
+        font-family: 'Heebo', sans-serif;
       }
       .journal-content {
         margin-top: 10px;
@@ -236,7 +238,7 @@
         border-radius: 8px;
         padding: 8px;
         resize: vertical;
-        font-family: inherit;
+        font-family: 'Heebo', sans-serif;
         font-size: 12px;
       }
       .save-journal-btn {
@@ -249,7 +251,7 @@
         cursor: pointer;
         font-size: 11px;
         font-weight: 700;
-        font-family: inherit;
+        font-family: 'Heebo', sans-serif;
       }
 
       .day-photos-container {
@@ -276,6 +278,7 @@
         font-size: 10px;
         font-weight: 700;
         cursor: pointer;
+        font-family: 'Heebo', sans-serif;
       }
       .photo-grid {
         display: grid;
@@ -343,43 +346,43 @@
       </button>
     </div>
     <nav class="tab-nav">
-      <button class="tab-btn active" onclick="switchTab(&#39;trip&#39;)">
+      <button class="tab-btn active" onclick="switchTab('trip')">
         <span>        🗓️
 </span>
-        <span>        לו&#34;ז
+        <span>        לו"ז
 </span>
       </button>
-      <button class="tab-btn" onclick="switchTab(&#39;hotels&#39;)">
+      <button class="tab-btn" onclick="switchTab('hotels')">
         <span>        🏨
 </span>
         <span>        מלונות
 </span>
       </button>
-      <button class="tab-btn" onclick="switchTab(&#39;restaurants&#39;)">
+      <button class="tab-btn" onclick="switchTab('restaurants')">
         <span>        🍽️
 </span>
         <span>        מסעדות
 </span>
       </button>
-      <button class="tab-btn" onclick="switchTab(&#39;attractions&#39;)">
+      <button class="tab-btn" onclick="switchTab('attractions')">
         <span>        🎯
 </span>
         <span>        אטרקציות
 </span>
       </button>
-      <button class="tab-btn" onclick="switchTab(&#39;shopping&#39;)">
+      <button class="tab-btn" onclick="switchTab('shopping')">
         <span>        🛒
 </span>
         <span>        קניות
 </span>
       </button>
-      <button class="tab-btn" onclick="switchTab(&#39;budget&#39;)">
+      <button class="tab-btn" onclick="switchTab('budget')">
         <span>        💰
 </span>
         <span>        תקציב
 </span>
       </button>
-      <button class="tab-btn" onclick="switchTab(&#39;map&#39;)">
+      <button class="tab-btn" onclick="switchTab('map')">
         <span>        🗺️
 </span>
         <span>        מפה
@@ -403,19 +406,13 @@
 </span>
           <span class="tag">          🏔️ טטרות
 </span>
-          <span class="tag">          🎢 אנרג&#39;ילנדיה
+          <span class="tag">          🎢 אנרג'ילנדיה
 </span>
           <span class="tag">          🏰 זאקופנה וקרקוב
 </span>
         </div>
       </div>
       <div class="info-bar">
-        <div class="info-item">
-          <span class="info-label">          יומן מסע
-</span>
-          <a class="info-link" href="https://docs.google.com/document/d/10hDl2hd6R8vatyWpPzvHBrV4tOEf0JRducWZXxI2cPE/edit" target="_blank">          📖 פתיחת יומן ↗
-</a>
-        </div>
         <div class="info-item">
           <span class="info-label">          אגרת סלובקיה
 </span>
@@ -457,7 +454,7 @@
           </div>
           <div class="act-content">
             <div class="act-name">
-              ✈️ המראה מנתב&#34;ג ונחיתה לפנות בוקר בברטיסלבה
+              ✈️ המראה מנתב"ג ונחיתה לפנות בוקר בברטיסלבה
             </div>
             <div class="act-note">
               איסוף הרכב השכור והגעה למלון AVIATOR GARNY HOTEL BRATISLAVA
@@ -809,7 +806,7 @@
               🏨 נסיעה למלון – SLONECZNE WZGORZE ZATOR
             </div>
             <div class="act-note">
-              צ&#39;ק-אין והתמקמות בזאטור
+              צ'ק-אין והתמקמות בזאטור
             </div>
           </div>
           <a class="act-nav" href="https://waze.com/ul?q=SLONECZNE+WZGORZE+ZATOR" target="_blank">          וויז
@@ -918,7 +915,7 @@
             </div>
           </div>
           <div class="day-title">
-            🎢 אנרג&#39;ילנדיה
+            🎢 אנרג'ילנדיה
           </div>
         </div>
         <div class="activity">
@@ -1107,7 +1104,7 @@
             </div>
           </div>
           <div class="day-title">
-            גן חיות קונטקט ומגלשות ז&#39;יארצה
+            גן חיות קונטקט ומגלשות ז'יארצה
           </div>
         </div>
         <div class="activity">
@@ -1439,7 +1436,7 @@
           </div>
         </div>
         <div class="item-desc">
-          מלון/דירות נופש במרחק קצר מזאטורלנד ואנרג&#39;ילנדיה.
+          מלון/דירות נופש במרחק קצר מזאטורלנד ואנרג'ילנדיה.
         </div>
       </div>
       <div class="item-card">
@@ -1561,7 +1558,7 @@
                 🥟 Pierogarnia Pod Aniołami / MR Vincent
               </div>
               <div class="item-sub">
-                📍 העיר העתיקה / רובע קז&#39;ימייז&#39;
+                📍 העיר העתיקה / רובע קז'ימייז'
               </div>
             </div>
             <a class="act-nav" href="https://waze.com/ul?q=Pierogi+MR+Vincent+Krakow" target="_blank">            וויז
@@ -1629,7 +1626,7 @@
                 🧀 Koliba Bešeňovka / Kozí vŕšok
               </div>
               <div class="item-sub">
-                📍 בשנובה / איבאצ&#39;נובה
+                📍 בשנובה / איבאצ'נובה
               </div>
             </div>
             <a class="act-nav" href="https://waze.com/ul?q=Koliba+Besenova" target="_blank">            וויז
@@ -1804,7 +1801,7 @@
           <div class="item-header">
             <div>
               <div class="item-title">
-                🎢 Energylandia (אנרג&#39;ילנדיה)
+                🎢 Energylandia (אנרג'ילנדיה)
               </div>
               <div class="item-sub">
                 📍 זאטור, פולין
@@ -1847,7 +1844,7 @@
                 🌲 שביל צמרות העצים (Bachledka)
               </div>
               <div class="item-sub">
-                📍 זאדז&#39;אר (גבול פולין-סלובקיה)
+                📍 זאדז'אר (גבול פולין-סלובקיה)
               </div>
             </div>
             <a class="act-nav" href="https://waze.com/ul?q=Bachledka+Treetop+Walk" target="_blank">            וויז
@@ -1997,7 +1994,7 @@
           </div>
         </div>
         <div class="item-desc">
-          קניון ענק הכולל סניף Primark גדול, רשתות אופנה בינלאומיות (Zara, H&amp;M, Reserved) ומתחם ג&#39;מבורי לילדים.
+          קניון ענק הכולל סניף Primark גדול, רשתות אופנה בינלאומיות (Zara, H&amp;M, Reserved) ומתחם ג'מבורי לילדים.
         </div>
       </div>
       <div class="item-card">
@@ -2121,7 +2118,7 @@
       <div class="budget-card">
         <div class="budget-total">
           <h3>
-            סה&#34;כ תקציב משוער
+            סה"כ תקציב משוער
           </h3>
           <div class="amount">
             24,270 ₪
@@ -2235,7 +2232,7 @@
         <span id="lightbox-counter">        1 / 1
 </span>
         <div style="display:flex; gap:12px;">
-          <button onclick="deleteCurrentPhoto()" style="background:#C0392B; color:#fff; border:none; padding:6px 12px; border-radius:8px; font-weight:bold; cursor:pointer; font-family:&#39;Heebo&#39;;">
+          <button onclick="deleteCurrentPhoto()" style="background:#C0392B; color:#fff; border:none; padding:6px 12px; border-radius:8px; font-weight:bold; cursor:pointer; font-family:'Heebo';">
             🗑️ מחק תמונה
           </button>
           <button onclick="closeLightbox()" style="background:#2A3A4A; color:#fff; border:none; padding:6px 14px; border-radius:8px; font-weight:bold; cursor:pointer; font-size:16px;">
@@ -2358,7 +2355,6 @@
 
       let globalJournals = {};
 
-      // פתיחה וסגירה של חלון היומן עם החץ
       function toggleJournal(dayNum) {
         const content = document.getElementById('journal-content-' + dayNum);
         const arrow = document.getElementById('journal-arrow-' + dayNum);
@@ -2371,7 +2367,6 @@
         }
       }
 
-      // שמירת יומן המסע לענן (Google Drive)
       function saveJournal(dayNum) {
         const text = document.getElementById('journal-text-' + dayNum).value;
         globalJournals[dayNum] = text;
@@ -2394,7 +2389,7 @@
             btn.textContent = '✅ נשמר בהצלחה!';
             setTimeout(() => { btn.textContent = originalText; }, 2000);
           } else {
-            alert('שגיאה בשמירה');
+            alert('שגיאה בשמירה: ' + (data.message || ''));
             btn.textContent = originalText;
           }
         })
@@ -2404,7 +2399,6 @@
         });
       }
 
-      // משיכת תמונות ויומני מסע מהדרייב והצגתם בכל המכשירים
       function loadPhotosFromDrive() {
         fetch(GOOGLE_SCRIPT_URL)
           .then(res => res.json())
@@ -2430,7 +2424,6 @@
           .catch(err => console.log('שגיאה בטעינת נתונים מהדרייב'));
       }
 
-      // הוספת תמיכה בבחירה מרובה (Multiple) והעלאה רצופה
       function uploadCloudPhoto(dayNum) {
         const input = document.createElement('input');
         input.type = 'file';
@@ -2483,12 +2476,8 @@
                     body: params
                   })
                   .then(res => res.json())
-                  .then(data => {
-                    resolve();
-                  })
-                  .catch(err => {
-                    resolve();
-                  });
+                  .then(data => { resolve(); })
+                  .catch(err => { resolve(); });
                 };
                 img.src = event.target.result;
               };
