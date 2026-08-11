@@ -15,7 +15,7 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
     </script>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600;800;900&display=swap');
+      @import url(&#39;https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600;800;900&amp;display=swap&#39;);
 
       :root {
         --sk: #2D6A4F;
@@ -31,7 +31,7 @@
         --green: #52B788;
       }
 
-      [data-theme="light"] {
+      [data-theme=&#34;light&#34;] {
         --bg: #F7F4EF;
         --card: #FFFFFF;
         --text: #1A1A1A;
@@ -43,7 +43,7 @@
       * { box-sizing: border-box; margin: 0; padding: 0; }
 
       body {
-        font-family: 'Heebo', sans-serif;
+        font-family: &#39;Heebo&#39;, sans-serif;
         background: var(--bg);
         color: var(--text);
         max-width: 520px;
@@ -65,7 +65,7 @@
         border-bottom: 1px solid var(--border);
       }
 
-      [data-theme="light"] .header-bar {
+      [data-theme=&#34;light&#34;] .header-bar {
         background: rgba(247, 244, 239, 0.85);
       }
 
@@ -82,7 +82,7 @@
         display: flex;
         align-items: center;
         gap: 4px;
-        font-family: 'Heebo', sans-serif;
+        font-family: &#39;Heebo&#39;, sans-serif;
       }
 
       .tab-nav {
@@ -102,7 +102,7 @@
         flex: 1;
         min-width: 62px;
         padding: 10px 4px;
-        font-family: 'Heebo', sans-serif;
+        font-family: &#39;Heebo&#39;, sans-serif;
         font-size: 11px;
         font-weight: 700;
         color: var(--sub);
@@ -164,7 +164,7 @@
         align-items: center;
         cursor: pointer;
         color: var(--text);
-        font-family: 'Heebo', sans-serif;
+        font-family: &#39;Heebo&#39;, sans-serif;
       }
       .weather-main-title {
         display: flex;
@@ -315,7 +315,7 @@
         justify-content: space-between;
         align-items: center;
         font-size: 12px;
-        font-family: 'Heebo', sans-serif;
+        font-family: &#39;Heebo&#39;, sans-serif;
       }
       .journal-content {
         margin-top: 10px;
@@ -330,7 +330,7 @@
         border-radius: 8px;
         padding: 8px;
         resize: vertical;
-        font-family: 'Heebo', sans-serif;
+        font-family: &#39;Heebo&#39;, sans-serif;
         font-size: 12px;
       }
       .save-journal-btn {
@@ -343,7 +343,7 @@
         cursor: pointer;
         font-size: 11px;
         font-weight: 700;
-        font-family: 'Heebo', sans-serif;
+        font-family: &#39;Heebo&#39;, sans-serif;
       }
 
       .day-photos-container {
@@ -370,7 +370,7 @@
         font-size: 10px;
         font-weight: 700;
         cursor: pointer;
-        font-family: 'Heebo', sans-serif;
+        font-family: &#39;Heebo&#39;, sans-serif;
       }
       .photo-grid {
         display: grid;
@@ -431,38 +431,54 @@
         🌲 סלובקיה &amp; פולין 2026
       </div>
       <button class="theme-toggle-btn" onclick="toggleTheme()">
-        <span id="theme-icon">🌙</span>
-        <span id="theme-text">מצב כהה</span>
+        <span id="theme-icon">        🌙
+</span>
+        <span id="theme-text">        מצב כהה
+</span>
       </button>
     </div>
     <nav class="tab-nav">
-      <button class="tab-btn active" onclick="switchTab('trip')">
-        <span>🗓️</span>
-        <span>לו"ז</span>
+      <button class="tab-btn active" onclick="switchTab(&#39;trip&#39;)">
+        <span>        🗓️
+</span>
+        <span>        לו&#34;ז
+</span>
       </button>
-      <button class="tab-btn" onclick="switchTab('hotels')">
-        <span>🏨</span>
-        <span>מלונות</span>
+      <button class="tab-btn" onclick="switchTab(&#39;hotels&#39;)">
+        <span>        🏨
+</span>
+        <span>        מלונות
+</span>
       </button>
-      <button class="tab-btn" onclick="switchTab('restaurants')">
-        <span>🍽️</span>
-        <span>מסעדות</span>
+      <button class="tab-btn" onclick="switchTab(&#39;restaurants&#39;)">
+        <span>        🍽️
+</span>
+        <span>        מסעדות
+</span>
       </button>
-      <button class="tab-btn" onclick="switchTab('attractions')">
-        <span>🎯</span>
-        <span>אטרקציות</span>
+      <button class="tab-btn" onclick="switchTab(&#39;attractions&#39;)">
+        <span>        🎯
+</span>
+        <span>        אטרקציות
+</span>
       </button>
-      <button class="tab-btn" onclick="switchTab('shopping')">
-        <span>🛒</span>
-        <span>קניות</span>
+      <button class="tab-btn" onclick="switchTab(&#39;shopping&#39;)">
+        <span>        🛒
+</span>
+        <span>        קניות
+</span>
       </button>
-      <button class="tab-btn" onclick="switchTab('budget')">
-        <span>💰</span>
-        <span>תקציב</span>
+      <button class="tab-btn" onclick="switchTab(&#39;budget&#39;)">
+        <span>        💰
+</span>
+        <span>        תקציב
+</span>
       </button>
-      <button class="tab-btn" onclick="switchTab('map')">
-        <span>🗺️</span>
-        <span>מפה</span>
+      <button class="tab-btn" onclick="switchTab(&#39;map&#39;)">
+        <span>        🗺️
+</span>
+        <span>        מפה
+</span>
       </button>
     </nav>
     <!-- PAGE 1: ITINERARY -->
@@ -476,78 +492,102 @@
           16 אוגוסט – 30 אוגוסט 2026 • משפחת בוכריס
         </p>
         <div class="hero-tags">
-          <span class="tag">✈️ ברטיסלבה</span>
-          <span class="tag">🏔️ טטרות</span>
-          <span class="tag">🎢 אנרג'ילנדיה</span>
-          <span class="tag">🏰 זאקופנה וקרקוב</span>
+          <span class="tag">          ✈️ ברטיסלבה
+</span>
+          <span class="tag">          🏔️ טטרות
+</span>
+          <span class="tag">          🎢 אנרג&#39;ילנדיה
+</span>
+          <span class="tag">          🏰 זאקופנה וקרקוב
+</span>
         </div>
       </div>
-
       <!-- באנר אקורדיון מזג אוויר נפתח -->
       <div class="weather-accordion-container">
         <button class="weather-accordion-btn" onclick="toggleWeatherAccordion()">
           <div class="weather-main-title">
-            <span>🌤️ תחזית מזג אוויר חיה לפי אזורים</span>
-            <span id="weather-accordion-arrow" style="font-size: 11px;">▼</span>
+            <span>            🌤️ תחזית מזג אוויר חיה לפי אזורים
+</span>
+            <span id="weather-accordion-arrow" style="font-size: 11px;">            ▼
+</span>
           </div>
-          <div class="weather-quick-summary" id="weather-summary-text">לחץ לפתיחת השעות</div>
+          <div class="weather-quick-summary" id="weather-summary-text">
+            לחץ לפתיחת השעות
+          </div>
         </button>
         <div class="weather-accordion-content" id="weather-accordion-body">
           <div class="info-bar">
             <!-- Bystra / Zakopane -->
             <div class="weather-widget" id="ww-bystra">
               <div class="ww-header">
-                <span class="ww-title">🌲 זאקופנה / בייסטרה</span>
-                <span class="ww-current">טוען...</span>
+                <span class="ww-title">                🌲 זאקופנה / בייסטרה
+</span>
+                <span class="ww-current">                טוען...
+</span>
               </div>
-              <div class="ww-hourly-scroll">טוען תחזית שעתית...</div>
+              <div class="ww-hourly-scroll">
+                טוען תחזית שעתית...
+              </div>
             </div>
-
             <!-- Zator / Energylandia -->
             <div class="weather-widget" id="ww-zator">
               <div class="ww-header">
-                <span class="ww-title">🎢 זאטור / אנרג'ילנדיה</span>
-                <span class="ww-current">טוען...</span>
+                <span class="ww-title">                🎢 זאטור / אנרג&#39;ילנדיה
+</span>
+                <span class="ww-current">                טוען...
+</span>
               </div>
-              <div class="ww-hourly-scroll">טוען תחזית שעתית...</div>
+              <div class="ww-hourly-scroll">
+                טוען תחזית שעתית...
+              </div>
             </div>
-
             <!-- Krakow -->
             <div class="weather-widget" id="ww-krakow">
               <div class="ww-header">
-                <span class="ww-title">🏰 קרקוב</span>
-                <span class="ww-current">טוען...</span>
+                <span class="ww-title">                🏰 קרקוב
+</span>
+                <span class="ww-current">                טוען...
+</span>
               </div>
-              <div class="ww-hourly-scroll">טוען תחזית שעתית...</div>
+              <div class="ww-hourly-scroll">
+                טוען תחזית שעתית...
+              </div>
             </div>
-
             <!-- Tatras / Liptovsky Mikulas -->
             <div class="weather-widget" id="ww-liptovsky">
               <div class="ww-header">
-                <span class="ww-title">🏔️ ליפטובסקי / טטרות</span>
-                <span class="ww-current">טוען...</span>
+                <span class="ww-title">                🏔️ ליפטובסקי / טטרות
+</span>
+                <span class="ww-current">                טוען...
+</span>
               </div>
-              <div class="ww-hourly-scroll">טוען תחזית שעתית...</div>
+              <div class="ww-hourly-scroll">
+                טוען תחזית שעתית...
+              </div>
             </div>
-
             <!-- Bratislava -->
             <div class="weather-widget" id="ww-bratislava">
               <div class="ww-header">
-                <span class="ww-title">🏙️ ברטיסלבה</span>
-                <span class="ww-current">טוען...</span>
+                <span class="ww-title">                🏙️ ברטיסלבה
+</span>
+                <span class="ww-current">                טוען...
+</span>
               </div>
-              <div class="ww-hourly-scroll">טוען תחזית שעתית...</div>
+              <div class="ww-hourly-scroll">
+                טוען תחזית שעתית...
+              </div>
             </div>
-
             <div class="ww-links">
-              <a class="info-link" href="https://eznamka.sk" target="_blank">אגרת כביש SK ↗</a>
-              <a class="info-link" href="https://autopay.pl/en" target="_blank">אגרת כביש PL ↗</a>
-              <span style="color:var(--sub)">📞 חירום: 112</span>
+              <a class="info-link" href="https://eznamka.sk" target="_blank">              אגרת כביש SK ↗
+</a>
+              <a class="info-link" href="https://autopay.pl/en" target="_blank">              אגרת כביש PL ↗
+</a>
+              <span style="color:var(--sub)">              📞 חירום: 112
+</span>
             </div>
           </div>
         </div>
       </div>
-
       <!-- יום 0 -->
       <div class="day-card" id="day-card-0">
         <div class="day-header sk">
@@ -570,27 +610,34 @@
           </div>
           <div class="act-content">
             <div class="act-name">
-              ✈️ המראה מנתב"ג ונחיתה לפנות בוקר בברטיסלבה
+              ✈️ המראה מנתב&#34;ג ונחיתה לפנות בוקר בברטיסלבה
             </div>
             <div class="act-note">
               איסוף הרכב השכור והגעה למלון AVIATOR GARNY HOTEL BRATISLAVA
             </div>
           </div>
-          <a class="act-nav" href="https://waze.com/ul?q=AVIATOR+GARNY+HOTEL+BRATISLAVA" target="_blank">וויז</a>
+          <a class="act-nav" href="https://waze.com/ul?q=AVIATOR+GARNY+HOTEL+BRATISLAVA" target="_blank">          וויז
+</a>
         </div>
         <div class="journal-section">
           <button class="journal-toggle-btn" onclick="toggleJournal(0)">
-            <span>📖 יומן מסע (מה עבר עלינו היום?)</span>
-            <span id="journal-arrow-0">▼</span>
+            <span>            📖 יומן מסע (מה עבר עלינו היום?)
+</span>
+            <span id="journal-arrow-0">            ▼
+</span>
           </button>
           <div id="journal-content-0" class="journal-content">
-            <textarea id="journal-text-0" placeholder="כתוב כאן חוויות, מקומות שהייתם, זיכרונות..."></textarea>
-            <button class="save-journal-btn" onclick="saveJournal(0)">💾 שמור יומן לענן</button>
+            <textarea id="journal-text-0" placeholder="כתוב כאן חוויות, מקומות שהייתם, זיכרונות...">
+            </textarea>
+            <button class="save-journal-btn" onclick="saveJournal(0)">
+              💾 שמור יומן לענן
+            </button>
           </div>
         </div>
         <div class="day-photos-container">
           <div class="day-photos-title">
-            <span>📷 תמונות מיום 16/08</span>
+            <span>            📷 תמונות מיום 16/08
+</span>
             <button class="upload-photo-btn" onclick="uploadCloudPhoto(0)">
               📷 הוסף תמונה
             </button>
@@ -627,7 +674,8 @@
               AVIATOR GARNY HOTEL BRATISLAVA • מנוחה ושינה קלה
             </div>
           </div>
-          <a class="act-nav" href="https://waze.com/ul?q=AVIATOR+GARNY+HOTEL+BRATISLAVA" target="_blank">וויז</a>
+          <a class="act-nav" href="https://waze.com/ul?q=AVIATOR+GARNY+HOTEL+BRATISLAVA" target="_blank">          וויז
+</a>
         </div>
         <div class="activity">
           <img class="act-thumb" src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=120" alt="Bystra" />
@@ -642,21 +690,28 @@
               התארגנות בבית, מנוחה והצטיידות ראשונית
             </div>
           </div>
-          <a class="act-nav" href="https://waze.com/ul?q=Bystra+Podhalanska+Poland" target="_blank">וויז</a>
+          <a class="act-nav" href="https://waze.com/ul?q=Bystra+Podhalanska+Poland" target="_blank">          וויז
+</a>
         </div>
         <div class="journal-section">
           <button class="journal-toggle-btn" onclick="toggleJournal(1)">
-            <span>📖 יומן מסע (מה עבר עלינו היום?)</span>
-            <span id="journal-arrow-1">▼</span>
+            <span>            📖 יומן מסע (מה עבר עלינו היום?)
+</span>
+            <span id="journal-arrow-1">            ▼
+</span>
           </button>
           <div id="journal-content-1" class="journal-content">
-            <textarea id="journal-text-1" placeholder="כתוב כאן חוויות, מקומות שהייתם, זיכרונות..."></textarea>
-            <button class="save-journal-btn" onclick="saveJournal(1)">💾 שמור יומן לענן</button>
+            <textarea id="journal-text-1" placeholder="כתוב כאן חוויות, מקומות שהייתם, זיכרונות...">
+            </textarea>
+            <button class="save-journal-btn" onclick="saveJournal(1)">
+              💾 שמור יומן לענן
+            </button>
           </div>
         </div>
         <div class="day-photos-container">
           <div class="day-photos-title">
-            <span>📷 תמונות מיום 1</span>
+            <span>            📷 תמונות מיום 1
+</span>
             <div class="cloud-btn-group">
               <button class="upload-photo-btn" onclick="uploadCloudPhoto(1)">
                 📷 הוסף תמונה
@@ -695,7 +750,8 @@
               הליכה מרהיבה בין צמרות העצים, עלייה ברכבל ונוף לפסגות הטטרה
             </div>
           </div>
-          <a class="act-nav" href="https://waze.com/ul?q=Bachledka+Treetop+Walk" target="_blank">וויז</a>
+          <a class="act-nav" href="https://waze.com/ul?q=Bachledka+Treetop+Walk" target="_blank">          וויז
+</a>
         </div>
         <div class="activity">
           <img class="act-thumb" src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=120" alt="Terma Bania" />
@@ -710,21 +766,28 @@
               בילוי בערב במרחצאות תרמיים מפנקים בביאלקה טטרנסקה
             </div>
           </div>
-          <a class="act-nav" href="https://waze.com/ul?q=Terma+Bania+Bialka+Tatrzanska" target="_blank">וויז</a>
+          <a class="act-nav" href="https://waze.com/ul?q=Terma+Bania+Bialka+Tatrzanska" target="_blank">          וויז
+</a>
         </div>
         <div class="journal-section">
           <button class="journal-toggle-btn" onclick="toggleJournal(2)">
-            <span>📖 יומן מסע (מה עבר עלינו היום?)</span>
-            <span id="journal-arrow-2">▼</span>
+            <span>            📖 יומן מסע (מה עבר עלינו היום?)
+</span>
+            <span id="journal-arrow-2">            ▼
+</span>
           </button>
           <div id="journal-content-2" class="journal-content">
-            <textarea id="journal-text-2" placeholder="כתוב כאן חוויות, מקומות שהייתם, זיכרונות..."></textarea>
-            <button class="save-journal-btn" onclick="saveJournal(2)">💾 שמור יומן לענן</button>
+            <textarea id="journal-text-2" placeholder="כתוב כאן חוויות, מקומות שהייתם, זיכרונות...">
+            </textarea>
+            <button class="save-journal-btn" onclick="saveJournal(2)">
+              💾 שמור יומן לענן
+            </button>
           </div>
         </div>
         <div class="day-photos-container">
           <div class="day-photos-title">
-            <span>📷 תמונות מיום 2</span>
+            <span>            📷 תמונות מיום 2
+</span>
             <div class="cloud-btn-group">
               <button class="upload-photo-btn" onclick="uploadCloudPhoto(2)">
                 📷 הוסף תמונה
@@ -763,7 +826,8 @@
               עליה ברכבל לפסגה, תצפית פנורמית וארוחה במסעדה הררית
             </div>
           </div>
-          <a class="act-nav" href="https://waze.com/ul?q=Gubalowka+Zakopane" target="_blank">וויז</a>
+          <a class="act-nav" href="https://waze.com/ul?q=Gubalowka+Zakopane" target="_blank">          וויז
+</a>
         </div>
         <div class="activity">
           <img class="act-thumb" src="https://images.unsplash.com/photo-1513151233558-d860c5398176?w=120" alt="Krupówki" />
@@ -778,21 +842,28 @@
               דוכני גבינות Oscypek מעושנות, מזכרות וקניות
             </div>
           </div>
-          <a class="act-nav" href="https://waze.com/ul?q=Krupowki+Zakopane" target="_blank">וויז</a>
+          <a class="act-nav" href="https://waze.com/ul?q=Krupowki+Zakopane" target="_blank">          וויז
+</a>
         </div>
         <div class="journal-section">
           <button class="journal-toggle-btn" onclick="toggleJournal(3)">
-            <span>📖 יומן מסע (מה עבר עלינו היום?)</span>
-            <span id="journal-arrow-3">▼</span>
+            <span>            📖 יומן מסע (מה עבר עלינו היום?)
+</span>
+            <span id="journal-arrow-3">            ▼
+</span>
           </button>
           <div id="journal-content-3" class="journal-content">
-            <textarea id="journal-text-3" placeholder="כתוב כאן חוויות, מקומות שהייתם, זיכרונות..."></textarea>
-            <button class="save-journal-btn" onclick="saveJournal(3)">💾 שמור יומן לענן</button>
+            <textarea id="journal-text-3" placeholder="כתוב כאן חוויות, מקומות שהייתם, זיכרונות...">
+            </textarea>
+            <button class="save-journal-btn" onclick="saveJournal(3)">
+              💾 שמור יומן לענן
+            </button>
           </div>
         </div>
         <div class="day-photos-container">
           <div class="day-photos-title">
-            <span>📷 תמונות מיום 3</span>
+            <span>            📷 תמונות מיום 3
+</span>
             <button class="upload-photo-btn" onclick="uploadCloudPhoto(3)">
               📷 הוסף תמונה
             </button>
@@ -829,7 +900,8 @@
               שייט חווייתי ומהנה בנהר דונייץ
             </div>
           </div>
-          <a class="act-nav" href="https://waze.com/ul?q=Dunajec+Rafting" target="_blank">וויז</a>
+          <a class="act-nav" href="https://waze.com/ul?q=Dunajec+Rafting" target="_blank">          וויז
+</a>
         </div>
         <div class="activity">
           <img class="act-thumb" src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=120" alt="Czorsztyn" />
@@ -844,21 +916,28 @@
               אקשן מול אגם טשורשטין, אומגה אתגרית ומגלשת הרים מהירה
             </div>
           </div>
-          <a class="act-nav" href="https://waze.com/ul?q=Czorsztyn+Castle" target="_blank">וויז</a>
+          <a class="act-nav" href="https://waze.com/ul?q=Czorsztyn+Castle" target="_blank">          וויז
+</a>
         </div>
         <div class="journal-section">
           <button class="journal-toggle-btn" onclick="toggleJournal(4)">
-            <span>📖 יומן מסע (מה עבר עלינו היום?)</span>
-            <span id="journal-arrow-4">▼</span>
+            <span>            📖 יומן מסע (מה עבר עלינו היום?)
+</span>
+            <span id="journal-arrow-4">            ▼
+</span>
           </button>
           <div id="journal-content-4" class="journal-content">
-            <textarea id="journal-text-4" placeholder="כתוב כאן חוויות, מקומות שהייתם, זיכרונות..."></textarea>
-            <button class="save-journal-btn" onclick="saveJournal(4)">💾 שמור יומן לענן</button>
+            <textarea id="journal-text-4" placeholder="כתוב כאן חוויות, מקומות שהייתם, זיכרונות...">
+            </textarea>
+            <button class="save-journal-btn" onclick="saveJournal(4)">
+              💾 שמור יומן לענן
+            </button>
           </div>
         </div>
         <div class="day-photos-container">
           <div class="day-photos-title">
-            <span>📷 תמונות מיום 4</span>
+            <span>            📷 תמונות מיום 4
+</span>
             <button class="upload-photo-btn" onclick="uploadCloudPhoto(4)">
               📷 הוסף תמונה
             </button>
@@ -895,7 +974,8 @@
               פארק הדינוזאורים והמיתולוגיה, יום מהנה לילדים
             </div>
           </div>
-          <a class="act-nav" href="https://waze.com/ul?q=Zatorland+Zator" target="_blank">וויז</a>
+          <a class="act-nav" href="https://waze.com/ul?q=Zatorland+Zator" target="_blank">          וויז
+</a>
         </div>
         <div class="activity">
           <img class="act-thumb" src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=120" alt="Sloneczne Hotel" />
@@ -907,24 +987,31 @@
               🏨 נסיעה למלון – SLONECZNE WZGORZE ZATOR
             </div>
             <div class="act-note">
-              צ'ק-אין והתמקמות בזאטור
+              צ&#39;ק-אין והתמקמות בזאטור
             </div>
           </div>
-          <a class="act-nav" href="https://waze.com/ul?q=SLONECZNE+WZGORZE+ZATOR" target="_blank">וויז</a>
+          <a class="act-nav" href="https://waze.com/ul?q=SLONECZNE+WZGORZE+ZATOR" target="_blank">          וויז
+</a>
         </div>
         <div class="journal-section">
           <button class="journal-toggle-btn" onclick="toggleJournal(5)">
-            <span>📖 יומן מסע (מה עבר עלינו היום?)</span>
-            <span id="journal-arrow-5">▼</span>
+            <span>            📖 יומן מסע (מה עבר עלינו היום?)
+</span>
+            <span id="journal-arrow-5">            ▼
+</span>
           </button>
           <div id="journal-content-5" class="journal-content">
-            <textarea id="journal-text-5" placeholder="כתוב כאן חוויות, מקומות שהייתם, זיכרונות..."></textarea>
-            <button class="save-journal-btn" onclick="saveJournal(5)">💾 שמור יומן לענן</button>
+            <textarea id="journal-text-5" placeholder="כתוב כאן חוויות, מקומות שהייתם, זיכרונות...">
+            </textarea>
+            <button class="save-journal-btn" onclick="saveJournal(5)">
+              💾 שמור יומן לענן
+            </button>
           </div>
         </div>
         <div class="day-photos-container">
           <div class="day-photos-title">
-            <span>📷 תמונות מיום 5</span>
+            <span>            📷 תמונות מיום 5
+</span>
             <button class="upload-photo-btn" onclick="uploadCloudPhoto(5)">
               📷 הוסף תמונה
             </button>
@@ -961,7 +1048,8 @@
               ביקור בגן החיות הממוקם ביער הירוק
             </div>
           </div>
-          <a class="act-nav" href="https://waze.com/ul?q=Zoo+Krakow" target="_blank">וויז</a>
+          <a class="act-nav" href="https://waze.com/ul?q=Zoo+Krakow" target="_blank">          וויז
+</a>
         </div>
         <div class="activity">
           <img class="act-thumb" src="https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?w=120" alt="Bonarka" />
@@ -976,21 +1064,28 @@
               טיול בעיר העתיקה וקניות מרכזיות (כולל Primark)
             </div>
           </div>
-          <a class="act-nav" href="https://waze.com/ul?q=Bonarka+Krakow" target="_blank">וויז</a>
+          <a class="act-nav" href="https://waze.com/ul?q=Bonarka+Krakow" target="_blank">          וויז
+</a>
         </div>
         <div class="journal-section">
           <button class="journal-toggle-btn" onclick="toggleJournal(6)">
-            <span>📖 יומן מסע (מה עבר עלינו היום?)</span>
-            <span id="journal-arrow-6">▼</span>
+            <span>            📖 יומן מסע (מה עבר עלינו היום?)
+</span>
+            <span id="journal-arrow-6">            ▼
+</span>
           </button>
           <div id="journal-content-6" class="journal-content">
-            <textarea id="journal-text-6" placeholder="כתוב כאן חוויות, מקומות שהייתם, זיכרונות..."></textarea>
-            <button class="save-journal-btn" onclick="saveJournal(6)">💾 שמור יומן לענן</button>
+            <textarea id="journal-text-6" placeholder="כתוב כאן חוויות, מקומות שהייתם, זיכרונות...">
+            </textarea>
+            <button class="save-journal-btn" onclick="saveJournal(6)">
+              💾 שמור יומן לענן
+            </button>
           </div>
         </div>
         <div class="day-photos-container">
           <div class="day-photos-title">
-            <span>📷 תמונות מיום 6</span>
+            <span>            📷 תמונות מיום 6
+</span>
             <button class="upload-photo-btn" onclick="uploadCloudPhoto(6)">
               📷 הוסף תמונה
             </button>
@@ -1011,7 +1106,7 @@
             </div>
           </div>
           <div class="day-title">
-            🎢 אנרג'ילנדיה
+            🎢 אנרג&#39;ילנדיה
           </div>
         </div>
         <div class="activity">
@@ -1027,21 +1122,28 @@
               יום שלם בפארק הרכבות והאטרקציות הגדול באירופה!
             </div>
           </div>
-          <a class="act-nav" href="https://waze.com/ul?q=Energylandia+Zator" target="_blank">וויז</a>
+          <a class="act-nav" href="https://waze.com/ul?q=Energylandia+Zator" target="_blank">          וויז
+</a>
         </div>
         <div class="journal-section">
           <button class="journal-toggle-btn" onclick="toggleJournal(7)">
-            <span>📖 יומן מסע (מה עבר עלינו היום?)</span>
-            <span id="journal-arrow-7">▼</span>
+            <span>            📖 יומן מסע (מה עבר עלינו היום?)
+</span>
+            <span id="journal-arrow-7">            ▼
+</span>
           </button>
           <div id="journal-content-7" class="journal-content">
-            <textarea id="journal-text-7" placeholder="כתוב כאן חוויות, מקומות שהייתם, זיכרונות..."></textarea>
-            <button class="save-journal-btn" onclick="saveJournal(7)">💾 שמור יומן לענן</button>
+            <textarea id="journal-text-7" placeholder="כתוב כאן חוויות, מקומות שהייתם, זיכרונות...">
+            </textarea>
+            <button class="save-journal-btn" onclick="saveJournal(7)">
+              💾 שמור יומן לענן
+            </button>
           </div>
         </div>
         <div class="day-photos-container">
           <div class="day-photos-title">
-            <span>📷 תמונות מיום 7</span>
+            <span>            📷 תמונות מיום 7
+</span>
             <button class="upload-photo-btn" onclick="uploadCloudPhoto(7)">
               📷 הוסף תמונה
             </button>
@@ -1092,21 +1194,28 @@
               התמקמות בבית הנופש בסלובקיה
             </div>
           </div>
-          <a class="act-nav" href="https://waze.com/ul?q=Dovolenkovy+Dom+Vranka" target="_blank">וויז</a>
+          <a class="act-nav" href="https://waze.com/ul?q=Dovolenkovy+Dom+Vranka" target="_blank">          וויז
+</a>
         </div>
         <div class="journal-section">
           <button class="journal-toggle-btn" onclick="toggleJournal(8)">
-            <span>📖 יומן מסע (מה עבר עלינו היום?)</span>
-            <span id="journal-arrow-8">▼</span>
+            <span>            📖 יומן מסע (מה עבר עלינו היום?)
+</span>
+            <span id="journal-arrow-8">            ▼
+</span>
           </button>
           <div id="journal-content-8" class="journal-content">
-            <textarea id="journal-text-8" placeholder="כתוב כאן חוויות, מקומות שהייתם, זיכרונות..."></textarea>
-            <button class="save-journal-btn" onclick="saveJournal(8)">💾 שמור יומן לענן</button>
+            <textarea id="journal-text-8" placeholder="כתוב כאן חוויות, מקומות שהייתם, זיכרונות...">
+            </textarea>
+            <button class="save-journal-btn" onclick="saveJournal(8)">
+              💾 שמור יומן לענן
+            </button>
           </div>
         </div>
         <div class="day-photos-container">
           <div class="day-photos-title">
-            <span>📷 תמונות מיום 8</span>
+            <span>            📷 תמונות מיום 8
+</span>
             <button class="upload-photo-btn" onclick="uploadCloudPhoto(8)">
               📷 הוסף תמונה
             </button>
@@ -1143,7 +1252,8 @@
               מסלול הליכה יפהפה בתוך נקיק סלעים, גשרים ומפלים
             </div>
           </div>
-          <a class="act-nav" href="https://waze.com/ul?q=Janosikove+Diery" target="_blank">וויז</a>
+          <a class="act-nav" href="https://waze.com/ul?q=Janosikove+Diery" target="_blank">          וויז
+</a>
         </div>
         <div class="activity">
           <img class="act-thumb" src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=120" alt="Besenova" />
@@ -1158,21 +1268,28 @@
               בילוי בבריכות תרמיות ומגלשות מים
             </div>
           </div>
-          <a class="act-nav" href="https://waze.com/ul?q=Besenova+Aquapark" target="_blank">וויז</a>
+          <a class="act-nav" href="https://waze.com/ul?q=Besenova+Aquapark" target="_blank">          וויז
+</a>
         </div>
         <div class="journal-section">
           <button class="journal-toggle-btn" onclick="toggleJournal(9)">
-            <span>📖 יומן מסע (מה עבר עלינו היום?)</span>
-            <span id="journal-arrow-9">▼</span>
+            <span>            📖 יומן מסע (מה עבר עלינו היום?)
+</span>
+            <span id="journal-arrow-9">            ▼
+</span>
           </button>
           <div id="journal-content-9" class="journal-content">
-            <textarea id="journal-text-9" placeholder="כתוב כאן חוויות, מקומות שהייתם, זיכרונות..."></textarea>
-            <button class="save-journal-btn" onclick="saveJournal(9)">💾 שמור יומן לענן</button>
+            <textarea id="journal-text-9" placeholder="כתוב כאן חוויות, מקומות שהייתם, זיכרונות...">
+            </textarea>
+            <button class="save-journal-btn" onclick="saveJournal(9)">
+              💾 שמור יומן לענן
+            </button>
           </div>
         </div>
         <div class="day-photos-container">
           <div class="day-photos-title">
-            <span>📷 תמונות מיום 9</span>
+            <span>            📷 תמונות מיום 9
+</span>
             <button class="upload-photo-btn" onclick="uploadCloudPhoto(9)">
               📷 הוסף תמונה
             </button>
@@ -1193,7 +1310,7 @@
             </div>
           </div>
           <div class="day-title">
-            גן חיות קונטקט ומגלשות ז'יארצה
+            גן חיות קונטקט ומגלשות ז&#39;יארצה
           </div>
         </div>
         <div class="activity">
@@ -1209,7 +1326,8 @@
               מפגש מקרוב עם חיות בר ובית, האכלה וחוויה לילדים
             </div>
           </div>
-          <a class="act-nav" href="https://waze.com/ul?q=ZOOKONTAKT+Liptovsky+Mikulas" target="_blank">וויז</a>
+          <a class="act-nav" href="https://waze.com/ul?q=ZOOKONTAKT+Liptovsky+Mikulas" target="_blank">          וויז
+</a>
         </div>
         <div class="activity">
           <img class="act-thumb" src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=120" alt="Fun Park Ziarce" />
@@ -1224,21 +1342,28 @@
               גלישה חווייתית ומלאת אדרנלין במורד ההר
             </div>
           </div>
-          <a class="act-nav" href="https://waze.com/ul?q=Fun+Park+Ziarce" target="_blank">וויז</a>
+          <a class="act-nav" href="https://waze.com/ul?q=Fun+Park+Ziarce" target="_blank">          וויז
+</a>
         </div>
         <div class="journal-section">
           <button class="journal-toggle-btn" onclick="toggleJournal(10)">
-            <span>📖 יומן מסע (מה עבר עלינו היום?)</span>
-            <span id="journal-arrow-10">▼</span>
+            <span>            📖 יומן מסע (מה עבר עלינו היום?)
+</span>
+            <span id="journal-arrow-10">            ▼
+</span>
           </button>
           <div id="journal-content-10" class="journal-content">
-            <textarea id="journal-text-10" placeholder="כתוב כאן חוויות, מקומות שהייתם, זיכרונות..."></textarea>
-            <button class="save-journal-btn" onclick="saveJournal(10)">💾 שמור יומן לענן</button>
+            <textarea id="journal-text-10" placeholder="כתוב כאן חוויות, מקומות שהייתם, זיכרונות...">
+            </textarea>
+            <button class="save-journal-btn" onclick="saveJournal(10)">
+              💾 שמור יומן לענן
+            </button>
           </div>
         </div>
         <div class="day-photos-container">
           <div class="day-photos-title">
-            <span>📷 תמונות מיום 10</span>
+            <span>            📷 תמונות מיום 10
+</span>
             <button class="upload-photo-btn" onclick="uploadCloudPhoto(10)">
               📷 הוסף תמונה
             </button>
@@ -1275,21 +1400,28 @@
               יום שלם בפארק המים הגדול בסלובקיה!
             </div>
           </div>
-          <a class="act-nav" href="https://waze.com/ul?q=Aquapark+Tatralandia" target="_blank">וויז</a>
+          <a class="act-nav" href="https://waze.com/ul?q=Aquapark+Tatralandia" target="_blank">          וויז
+</a>
         </div>
         <div class="journal-section">
           <button class="journal-toggle-btn" onclick="toggleJournal(11)">
-            <span>📖 יומן מסע (מה עבר עלינו היום?)</span>
-            <span id="journal-arrow-11">▼</span>
+            <span>            📖 יומן מסע (מה עבר עלינו היום?)
+</span>
+            <span id="journal-arrow-11">            ▼
+</span>
           </button>
           <div id="journal-content-11" class="journal-content">
-            <textarea id="journal-text-11" placeholder="כתוב כאן חוויות, מקומות שהייתם, זיכרונות..."></textarea>
-            <button class="save-journal-btn" onclick="saveJournal(11)">💾 שמור יומן לענן</button>
+            <textarea id="journal-text-11" placeholder="כתוב כאן חוויות, מקומות שהייתם, זיכרונות...">
+            </textarea>
+            <button class="save-journal-btn" onclick="saveJournal(11)">
+              💾 שמור יומן לענן
+            </button>
           </div>
         </div>
         <div class="day-photos-container">
           <div class="day-photos-title">
-            <span>📷 תמונות מיום 11</span>
+            <span>            📷 תמונות מיום 11
+</span>
             <button class="upload-photo-btn" onclick="uploadCloudPhoto(11)">
               📷 הוסף תמונה
             </button>
@@ -1329,17 +1461,23 @@
         </div>
         <div class="journal-section">
           <button class="journal-toggle-btn" onclick="toggleJournal(12)">
-            <span>📖 יומן מסע (מה עבר עלינו היום?)</span>
-            <span id="journal-arrow-12">▼</span>
+            <span>            📖 יומן מסע (מה עבר עלינו היום?)
+</span>
+            <span id="journal-arrow-12">            ▼
+</span>
           </button>
           <div id="journal-content-12" class="journal-content">
-            <textarea id="journal-text-12" placeholder="כתוב כאן חוויות, מקומות שהייתם, זיכרונות..."></textarea>
-            <button class="save-journal-btn" onclick="saveJournal(12)">💾 שמור יומן לענן</button>
+            <textarea id="journal-text-12" placeholder="כתוב כאן חוויות, מקומות שהייתם, זיכרונות...">
+            </textarea>
+            <button class="save-journal-btn" onclick="saveJournal(12)">
+              💾 שמור יומן לענן
+            </button>
           </div>
         </div>
         <div class="day-photos-container">
           <div class="day-photos-title">
-            <span>📷 תמונות מיום 12</span>
+            <span>            📷 תמונות מיום 12
+</span>
             <button class="upload-photo-btn" onclick="uploadCloudPhoto(12)">
               📷 הוסף תמונה
             </button>
@@ -1376,7 +1514,8 @@
               AVIATOR GARNY HOTEL BRATISLAVA
             </div>
           </div>
-          <a class="act-nav" href="https://waze.com/ul?q=AVIATOR+GARNY+HOTEL+BRATISLAVA" target="_blank">וויז</a>
+          <a class="act-nav" href="https://waze.com/ul?q=AVIATOR+GARNY+HOTEL+BRATISLAVA" target="_blank">          וויז
+</a>
         </div>
         <div class="activity">
           <img class="act-thumb" src="https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=120" alt="Eurovea" />
@@ -1391,21 +1530,28 @@
               סיור ברכבת תיירים בברטיסלבה ומשחק במזרקות ליד קניון Eurovea
             </div>
           </div>
-          <a class="act-nav" href="https://waze.com/ul?q=Eurovea+Bratislava" target="_blank">וויז</a>
+          <a class="act-nav" href="https://waze.com/ul?q=Eurovea+Bratislava" target="_blank">          וויז
+</a>
         </div>
         <div class="journal-section">
           <button class="journal-toggle-btn" onclick="toggleJournal(13)">
-            <span>📖 יומן מסע (מה עבר עלינו היום?)</span>
-            <span id="journal-arrow-13">▼</span>
+            <span>            📖 יומן מסע (מה עבר עלינו היום?)
+</span>
+            <span id="journal-arrow-13">            ▼
+</span>
           </button>
           <div id="journal-content-13" class="journal-content">
-            <textarea id="journal-text-13" placeholder="כתוב כאן חוויות, מקומות שהייתם, זיכרונות..."></textarea>
-            <button class="save-journal-btn" onclick="saveJournal(13)">💾 שמור יומן לענן</button>
+            <textarea id="journal-text-13" placeholder="כתוב כאן חוויות, מקומות שהייתם, זיכרונות...">
+            </textarea>
+            <button class="save-journal-btn" onclick="saveJournal(13)">
+              💾 שמור יומן לענן
+            </button>
           </div>
         </div>
         <div class="day-photos-container">
           <div class="day-photos-title">
-            <span>📷 תמונות מיום 13</span>
+            <span>            📷 תמונות מיום 13
+</span>
             <button class="upload-photo-btn" onclick="uploadCloudPhoto(13)">
               📷 הוסף תמונה
             </button>
@@ -1445,17 +1591,23 @@
         </div>
         <div class="journal-section">
           <button class="journal-toggle-btn" onclick="toggleJournal(14)">
-            <span>📖 יומן מסע (מה עבר עלינו היום?)</span>
-            <span id="journal-arrow-14">▼</span>
+            <span>            📖 יומן מסע (מה עבר עלינו היום?)
+</span>
+            <span id="journal-arrow-14">            ▼
+</span>
           </button>
           <div id="journal-content-14" class="journal-content">
-            <textarea id="journal-text-14" placeholder="כתוב כאן חוויות, מקומות שהייתם, זיכרונות..."></textarea>
-            <button class="save-journal-btn" onclick="saveJournal(14)">💾 שמור יומן לענן</button>
+            <textarea id="journal-text-14" placeholder="כתוב כאן חוויות, מקומות שהייתם, זיכרונות...">
+            </textarea>
+            <button class="save-journal-btn" onclick="saveJournal(14)">
+              💾 שמור יומן לענן
+            </button>
           </div>
         </div>
         <div class="day-photos-container">
           <div class="day-photos-title">
-            <span>📷 תמונות מיום 14</span>
+            <span>            📷 תמונות מיום 14
+</span>
             <button class="upload-photo-btn" onclick="uploadCloudPhoto(14)">
               📷 הוסף תמונה
             </button>
@@ -1490,7 +1642,8 @@
                 פולין • 17/08 - 21/08 (4 לילות)
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=Bystra+Podhalanska+Poland" target="_blank">וויז</a>
+            <a class="act-nav" href="https://waze.com/ul?q=Bystra+Podhalanska+Poland" target="_blank">            וויז
+</a>
           </div>
         </div>
         <div class="item-desc">
@@ -1509,11 +1662,12 @@
                 פולין (זאטור) • 21/08 - 24/08 (3 לילות)
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=SLONECZNE+WZGORZE+ZATOR" target="_blank">וויז</a>
+            <a class="act-nav" href="https://waze.com/ul?q=SLONECZNE+WZGORZE+ZATOR" target="_blank">            וויז
+</a>
           </div>
         </div>
         <div class="item-desc">
-          מלון/דירות נופש במרחק קצר מזאטורלנד ואנרג'ילנדיה.
+          מלון/דירות נופש במרחק קצר מזאטורלנד ואנרג&#39;ילנדיה.
         </div>
       </div>
       <div class="item-card">
@@ -1528,7 +1682,8 @@
                 סלובקיה • 24/08 - 29/08 (5 לילות)
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=Dovolenkovy+Dom+Vranka" target="_blank">וויז</a>
+            <a class="act-nav" href="https://waze.com/ul?q=Dovolenkovy+Dom+Vranka" target="_blank">            וויז
+</a>
           </div>
         </div>
         <div class="item-desc">
@@ -1547,7 +1702,8 @@
                 ברטיסלבה • 17/08 &amp; 29/08 (2 לילות)
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=AVIATOR+GARNY+HOTEL+BRATISLAVA" target="_blank">וויז</a>
+            <a class="act-nav" href="https://waze.com/ul?q=AVIATOR+GARNY+HOTEL+BRATISLAVA" target="_blank">            וויז
+</a>
           </div>
         </div>
         <div class="item-desc">
@@ -1569,9 +1725,12 @@
         </p>
       </div>
       <div class="section-header">
-        <span class="section-flag">🇵🇱</span>
-        <span class="section-title">זאקופנה ופולין ההררית</span>
-        <div class="section-line"></div>
+        <span class="section-flag">        🇵🇱
+</span>
+        <span class="section-title">        זאקופנה ופולין ההררית
+</span>
+        <div class="section-line">
+        </div>
       </div>
       <div class="item-card">
         <div class="item-card-main">
@@ -1585,7 +1744,8 @@
                 📍 מדרחוב Krupówki, זאקופנה
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=Karczma+Po+Zboju+Zakopane" target="_blank">וויז</a>
+            <a class="act-nav" href="https://waze.com/ul?q=Karczma+Po+Zboju+Zakopane" target="_blank">            וויז
+</a>
           </div>
         </div>
         <div class="item-desc">
@@ -1604,7 +1764,8 @@
                 📍 זאקופנה
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=Bakowo+Zohylina+Wyznio+Zakopane" target="_blank">וויז</a>
+            <a class="act-nav" href="https://waze.com/ul?q=Bakowo+Zohylina+Wyznio+Zakopane" target="_blank">            וויז
+</a>
           </div>
         </div>
         <div class="item-desc">
@@ -1612,9 +1773,12 @@
         </div>
       </div>
       <div class="section-header">
-        <span class="section-flag">🏰</span>
-        <span class="section-title">קרקוב והעיר העתיקה</span>
-        <div class="section-line"></div>
+        <span class="section-flag">        🏰
+</span>
+        <span class="section-title">        קרקוב והעיר העתיקה
+</span>
+        <div class="section-line">
+        </div>
       </div>
       <div class="item-card">
         <div class="item-card-main">
@@ -1625,10 +1789,11 @@
                 🥟 Pierogarnia Pod Aniołami / MR Vincent
               </div>
               <div class="item-sub">
-                📍 העיר העתיקה / רובע קז'ימייז'
+                📍 העיר העתיקה / רובע קז&#39;ימייז&#39;
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=Pierogi+MR+Vincent+Krakow" target="_blank">וויז</a>
+            <a class="act-nav" href="https://waze.com/ul?q=Pierogi+MR+Vincent+Krakow" target="_blank">            וויז
+</a>
           </div>
         </div>
         <div class="item-desc">
@@ -1647,7 +1812,8 @@
                 📍 Plac Szczepański 8, קרקוב
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=Morskie+Oko+Krakow" target="_blank">וויז</a>
+            <a class="act-nav" href="https://waze.com/ul?q=Morskie+Oko+Krakow" target="_blank">            וויז
+</a>
           </div>
         </div>
         <div class="item-desc">
@@ -1655,9 +1821,12 @@
         </div>
       </div>
       <div class="section-header">
-        <span class="section-flag">🇸🇰</span>
-        <span class="section-title">הטטרות וליפטובסקי מיקולאש</span>
-        <div class="section-line"></div>
+        <span class="section-flag">        🇸🇰
+</span>
+        <span class="section-title">        הטטרות וליפטובסקי מיקולאש
+</span>
+        <div class="section-line">
+        </div>
       </div>
       <div class="item-card">
         <div class="item-card-main">
@@ -1671,7 +1840,8 @@
                 📍 מרכז ליפטובסקי מיקולאש
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=Route+66+Liptovsky+Mikulas" target="_blank">וויז</a>
+            <a class="act-nav" href="https://waze.com/ul?q=Route+66+Liptovsky+Mikulas" target="_blank">            וויז
+</a>
           </div>
         </div>
         <div class="item-desc">
@@ -1687,10 +1857,11 @@
                 🧀 Koliba Bešeňovka / Kozí vŕšok
               </div>
               <div class="item-sub">
-                📍 בשנובה / איבאצ'נובה
+                📍 בשנובה / איבאצ&#39;נובה
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=Koliba+Besenova" target="_blank">וויז</a>
+            <a class="act-nav" href="https://waze.com/ul?q=Koliba+Besenova" target="_blank">            וויז
+</a>
           </div>
         </div>
         <div class="item-desc">
@@ -1698,9 +1869,12 @@
         </div>
       </div>
       <div class="section-header">
-        <span class="section-flag">🏙️</span>
-        <span class="section-title">ברטיסלבה</span>
-        <div class="section-line"></div>
+        <span class="section-flag">        🏙️
+</span>
+        <span class="section-title">        ברטיסלבה
+</span>
+        <div class="section-line">
+        </div>
       </div>
       <div class="item-card">
         <div class="item-card-main">
@@ -1714,7 +1888,8 @@
                 📍 קורסו הדנובה, ברטיסלבה
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=Eurovea+Bratislava" target="_blank">וויז</a>
+            <a class="act-nav" href="https://waze.com/ul?q=Eurovea+Bratislava" target="_blank">            וויז
+</a>
           </div>
         </div>
         <div class="item-desc">
@@ -1736,9 +1911,12 @@
         </p>
       </div>
       <div class="section-header">
-        <span class="section-flag">🇸🇰</span>
-        <span class="section-title">סלובקיה – פארקים וטבע</span>
-        <div class="section-line"></div>
+        <span class="section-flag">        🇸🇰
+</span>
+        <span class="section-title">        סלובקיה – פארקים וטבע
+</span>
+        <div class="section-line">
+        </div>
       </div>
       <div class="item-card">
         <div class="item-card-main">
@@ -1752,7 +1930,8 @@
                 📍 ליפטובסקי מיקולאש
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=Aquapark+Tatralandia" target="_blank">וויז</a>
+            <a class="act-nav" href="https://waze.com/ul?q=Aquapark+Tatralandia" target="_blank">            וויז
+</a>
           </div>
         </div>
         <div class="item-desc">
@@ -1771,7 +1950,8 @@
                 📍 בשנובה, סלובקיה
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=Besenova+Aquapark" target="_blank">וויז</a>
+            <a class="act-nav" href="https://waze.com/ul?q=Besenova+Aquapark" target="_blank">            וויז
+</a>
           </div>
         </div>
         <div class="item-desc">
@@ -1790,7 +1970,8 @@
                 📍 ליפטובסקי מיקולאש
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=ZOOKONTAKT+Liptovsky+Mikulas" target="_blank">וויז</a>
+            <a class="act-nav" href="https://waze.com/ul?q=ZOOKONTAKT+Liptovsky+Mikulas" target="_blank">            וויז
+</a>
           </div>
         </div>
         <div class="item-desc">
@@ -1809,7 +1990,8 @@
                 📍 טרחובא
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=Janosikove+Diery" target="_blank">וויז</a>
+            <a class="act-nav" href="https://waze.com/ul?q=Janosikove+Diery" target="_blank">            וויז
+</a>
           </div>
         </div>
         <div class="item-desc">
@@ -1828,7 +2010,8 @@
                 📍 עמק דמנובסקה
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=Fun+Park+Ziarce" target="_blank">וויז</a>
+            <a class="act-nav" href="https://waze.com/ul?q=Fun+Park+Ziarce" target="_blank">            וויז
+</a>
           </div>
         </div>
         <div class="item-desc">
@@ -1836,9 +2019,12 @@
         </div>
       </div>
       <div class="section-header">
-        <span class="section-flag">🇵🇱</span>
-        <span class="section-title">פולין וזאקופנה</span>
-        <div class="section-line"></div>
+        <span class="section-flag">        🇵🇱
+</span>
+        <span class="section-title">        פולין וזאקופנה
+</span>
+        <div class="section-line">
+        </div>
       </div>
       <div class="item-card">
         <div class="item-card-main">
@@ -1846,13 +2032,14 @@
           <div class="item-header">
             <div>
               <div class="item-title">
-                🎢 Energylandia (אנרג'ילנדיה)
+                🎢 Energylandia (אנרג&#39;ילנדיה)
               </div>
               <div class="item-sub">
                 📍 זאטור, פולין
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=Energylandia+Zator" target="_blank">וויז</a>
+            <a class="act-nav" href="https://waze.com/ul?q=Energylandia+Zator" target="_blank">            וויז
+</a>
           </div>
         </div>
         <div class="item-desc">
@@ -1871,7 +2058,8 @@
                 📍 זאטור, פולין
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=Zatorland+Zator" target="_blank">וויז</a>
+            <a class="act-nav" href="https://waze.com/ul?q=Zatorland+Zator" target="_blank">            וויז
+</a>
           </div>
         </div>
         <div class="item-desc">
@@ -1887,10 +2075,11 @@
                 🌲 שביל צמרות העצים (Bachledka)
               </div>
               <div class="item-sub">
-                📍 זאדז'אר (גבול פולין-סלובקיה)
+                📍 זאדז&#39;אר (גבול פולין-סלובקיה)
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=Bachledka+Treetop+Walk" target="_blank">וויז</a>
+            <a class="act-nav" href="https://waze.com/ul?q=Bachledka+Treetop+Walk" target="_blank">            וויז
+</a>
           </div>
         </div>
         <div class="item-desc">
@@ -1909,7 +2098,8 @@
                 📍 ביאלקה טטרנסקה
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=Terma+Bania+Bialka+Tatrzanska" target="_blank">וויז</a>
+            <a class="act-nav" href="https://waze.com/ul?q=Terma+Bania+Bialka+Tatrzanska" target="_blank">            וויז
+</a>
           </div>
         </div>
         <div class="item-desc">
@@ -1928,7 +2118,8 @@
                 📍 זאקופנה
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=Gubalowka+Zakopane" target="_blank">וויז</a>
+            <a class="act-nav" href="https://waze.com/ul?q=Gubalowka+Zakopane" target="_blank">            וויז
+</a>
           </div>
         </div>
         <div class="item-desc">
@@ -1947,7 +2138,8 @@
                 📍 שמורת פניני (Pieniny)
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=Dunajec+Rafting" target="_blank">וויז</a>
+            <a class="act-nav" href="https://waze.com/ul?q=Dunajec+Rafting" target="_blank">            וויז
+</a>
           </div>
         </div>
         <div class="item-desc">
@@ -1966,7 +2158,8 @@
                 📍 טשורשטין
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=Czorsztyn+Castle" target="_blank">וויז</a>
+            <a class="act-nav" href="https://waze.com/ul?q=Czorsztyn+Castle" target="_blank">            וויז
+</a>
           </div>
         </div>
         <div class="item-desc">
@@ -1985,7 +2178,8 @@
                 📍 קרקוב
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=Zoo+Krakow" target="_blank">וויז</a>
+            <a class="act-nav" href="https://waze.com/ul?q=Zoo+Krakow" target="_blank">            וויז
+</a>
           </div>
         </div>
         <div class="item-desc">
@@ -2007,9 +2201,12 @@
         </p>
       </div>
       <div class="section-header">
-        <span class="section-flag">🏰</span>
-        <span class="section-title">אזור קרקוב</span>
-        <div class="section-line"></div>
+        <span class="section-flag">        🏰
+</span>
+        <span class="section-title">        אזור קרקוב
+</span>
+        <div class="section-line">
+        </div>
       </div>
       <div class="item-card">
         <div class="item-card-main">
@@ -2023,11 +2220,12 @@
                 📍 קרקוב, פולין
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=Bonarka+Krakow" target="_blank">וויז</a>
+            <a class="act-nav" href="https://waze.com/ul?q=Bonarka+Krakow" target="_blank">            וויז
+</a>
           </div>
         </div>
         <div class="item-desc">
-          קניון ענק הכולל סניף Primark גדול, רשתות אופנה בינלאומיות (Zara, H&amp;M, Reserved) ומתחם ג'מבורי לילדים.
+          קניון ענק הכולל סניף Primark גדול, רשתות אופנה בינלאומיות (Zara, H&amp;M, Reserved) ומתחם ג&#39;מבורי לילדים.
         </div>
       </div>
       <div class="item-card">
@@ -2042,7 +2240,8 @@
                 📍 צמוד לתחנה המרכזית, קרקוב
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=Galeria+Krakowska" target="_blank">וויז</a>
+            <a class="act-nav" href="https://waze.com/ul?q=Galeria+Krakowska" target="_blank">            וויז
+</a>
           </div>
         </div>
         <div class="item-desc">
@@ -2050,9 +2249,12 @@
         </div>
       </div>
       <div class="section-header">
-        <span class="section-flag">🇵🇱</span>
-        <span class="section-title">אזור זאקופנה</span>
-        <div class="section-line"></div>
+        <span class="section-flag">        🇵🇱
+</span>
+        <span class="section-title">        אזור זאקופנה
+</span>
+        <div class="section-line">
+        </div>
       </div>
       <div class="item-card">
         <div class="item-card-main">
@@ -2066,7 +2268,8 @@
                 📍 מרכז זאקופנה
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=Krupowki+Zakopane" target="_blank">וויז</a>
+            <a class="act-nav" href="https://waze.com/ul?q=Krupowki+Zakopane" target="_blank">            וויז
+</a>
           </div>
         </div>
         <div class="item-desc">
@@ -2074,9 +2277,12 @@
         </div>
       </div>
       <div class="section-header">
-        <span class="section-flag">🇸🇰</span>
-        <span class="section-title">אזור סלובקיה והטטרות</span>
-        <div class="section-line"></div>
+        <span class="section-flag">        🇸🇰
+</span>
+        <span class="section-title">        אזור סלובקיה והטטרות
+</span>
+        <div class="section-line">
+        </div>
       </div>
       <div class="item-card">
         <div class="item-card-main">
@@ -2090,7 +2296,8 @@
                 📍 ליפטובסקי מיקולאש
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=TESCO+Liptovsky+Mikulas" target="_blank">וויז</a>
+            <a class="act-nav" href="https://waze.com/ul?q=TESCO+Liptovsky+Mikulas" target="_blank">            וויז
+</a>
           </div>
         </div>
         <div class="item-desc">
@@ -2098,9 +2305,12 @@
         </div>
       </div>
       <div class="section-header">
-        <span class="section-flag">🏙️</span>
-        <span class="section-title">אזור ברטיסלבה</span>
-        <div class="section-line"></div>
+        <span class="section-flag">        🏙️
+</span>
+        <span class="section-title">        אזור ברטיסלבה
+</span>
+        <div class="section-line">
+        </div>
       </div>
       <div class="item-card">
         <div class="item-card-main">
@@ -2114,7 +2324,8 @@
                 📍 ברטיסלבה
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=Eurovea+Bratislava" target="_blank">וויז</a>
+            <a class="act-nav" href="https://waze.com/ul?q=Eurovea+Bratislava" target="_blank">            וויז
+</a>
           </div>
         </div>
         <div class="item-desc">
@@ -2138,7 +2349,7 @@
       <div class="budget-card">
         <div class="budget-total">
           <h3>
-            סה"כ תקציב משוער
+            סה&#34;כ תקציב משוער
           </h3>
           <div class="amount">
             24,270 ₪
@@ -2249,9 +2460,10 @@
     <!-- Lightbox Modal -->
     <div id="lightbox-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.92); z-index:9999; flex-direction:column; justify-content:space-between; align-items:center; padding:20px 10px;">
       <div style="width:100%; display:flex; justify-content:space-between; align-items:center; color:#fff; font-size:14px; padding:0 10px;">
-        <span id="lightbox-counter">1 / 1</span>
+        <span id="lightbox-counter">        1 / 1
+</span>
         <div style="display:flex; gap:12px;">
-          <button onclick="deleteCurrentPhoto()" style="background:#C0392B; color:#fff; border:none; padding:6px 12px; border-radius:8px; font-weight:bold; cursor:pointer; font-family:'Heebo';">
+          <button onclick="deleteCurrentPhoto()" style="background:#C0392B; color:#fff; border:none; padding:6px 12px; border-radius:8px; font-weight:bold; cursor:pointer; font-family:&#39;Heebo&#39;;">
             🗑️ מחק תמונה
           </button>
           <button onclick="closeLightbox()" style="background:#2A3A4A; color:#fff; border:none; padding:6px 14px; border-radius:8px; font-weight:bold; cursor:pointer; font-size:16px;">
@@ -2512,7 +2724,23 @@
             if (data.status === 'success') {
               if (data.photos) {
                 for (let dayNum in data.photos) {
-                  localStorage.setItem('trip_photos_day_' + dayNum, JSON.stringify(data.photos[dayNum]));
+                  // המרת כתובות הדרייב לפורמט ישיר לצפייה חלקה
+                  const fixedPhotos = data.photos[dayNum].map(url => {
+                    if (url.includes('drive.google.com') && url.includes('id=')) {
+                      const fileIdMatch = url.match(/id=([a-zA-Z0-9_-]+)/);
+                      if (fileIdMatch && fileIdMatch[1]) {
+                        return `https://lh3.googleusercontent.com/d/${fileIdMatch[1]}=s1000`;
+                      }
+                    } else if (url.includes('drive.google.com/file/d/')) {
+                      const fileIdMatch = url.match(/\/d\/([a-zA-Z0-9_-]+)/);
+                      if (fileIdMatch && fileIdMatch[1]) {
+                        return `https://lh3.googleusercontent.com/d/${fileIdMatch[1]}=s1000`;
+                      }
+                    }
+                    return url;
+                  });
+
+                  localStorage.setItem('trip_photos_day_' + dayNum, JSON.stringify(fixedPhotos));
                   renderPhotosForDay(dayNum);
                 }
               }
