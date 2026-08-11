@@ -65,6 +65,10 @@
         border-bottom: 1px solid var(--border);
       }
 
+      [data-theme="light"] .header-bar {
+        background: rgba(247, 244, 239, 0.85);
+      }
+
       .brand { font-weight: 900; font-size: 14px; color: var(--accent); }
 
       .theme-toggle-btn {
@@ -139,14 +143,15 @@
         border-bottom: 1px solid var(--border);
         padding: 12px 16px;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
         gap: 10px;
         text-align: center;
+        margin-bottom: 16px; /* רווח מורגש בין ה-Info Bar לימים למטה */
       }
       .info-item { display: flex; flex-direction: column; gap: 2px; }
       .info-label { font-size: 10px; color: var(--sub); text-transform: uppercase; }
       .info-value { font-size: 12px; font-weight: 600; color: var(--text); }
-      .info-link { font-size: 12px; font-weight: 600; color: var(--blue); text-decoration: none; }
+      .info-link { font-size: 11px; font-weight: 600; color: var(--blue); text-decoration: none; }
 
       .section-header { display: flex; align-items: center; gap: 8px; padding: 16px 16px 8px; }
       .section-flag { font-size: 18px; }
@@ -339,54 +344,38 @@
         🌲 סלובקיה &amp; פולין 2026
       </div>
       <button class="theme-toggle-btn" onclick="toggleTheme()">
-        <span id="theme-icon">        🌙
-</span>
-        <span id="theme-text">        מצב כהה
-</span>
+        <span id="theme-icon">🌙</span>
+        <span id="theme-text">מצב כהה</span>
       </button>
     </div>
     <nav class="tab-nav">
       <button class="tab-btn active" onclick="switchTab('trip')">
-        <span>        🗓️
-</span>
-        <span>        לו"ז
-</span>
+        <span>🗓️</span>
+        <span>לו"ז</span>
       </button>
       <button class="tab-btn" onclick="switchTab('hotels')">
-        <span>        🏨
-</span>
-        <span>        מלונות
-</span>
+        <span>🏨</span>
+        <span>מלונות</span>
       </button>
       <button class="tab-btn" onclick="switchTab('restaurants')">
-        <span>        🍽️
-</span>
-        <span>        מסעדות
-</span>
+        <span>🍽️</span>
+        <span>מסעדות</span>
       </button>
       <button class="tab-btn" onclick="switchTab('attractions')">
-        <span>        🎯
-</span>
-        <span>        אטרקציות
-</span>
+        <span>🎯</span>
+        <span>אטרקציות</span>
       </button>
       <button class="tab-btn" onclick="switchTab('shopping')">
-        <span>        🛒
-</span>
-        <span>        קניות
-</span>
+        <span>🛒</span>
+        <span>קניות</span>
       </button>
       <button class="tab-btn" onclick="switchTab('budget')">
-        <span>        💰
-</span>
-        <span>        תקציב
-</span>
+        <span>💰</span>
+        <span>תקציב</span>
       </button>
       <button class="tab-btn" onclick="switchTab('map')">
-        <span>        🗺️
-</span>
-        <span>        מפה
-</span>
+        <span>🗺️</span>
+        <span>מפה</span>
       </button>
     </nav>
     <!-- PAGE 1: ITINERARY -->
@@ -402,34 +391,30 @@
           16 אוגוסט – 30 אוגוסט 2026 • משפחת בוכריס
         </p>
         <div class="hero-tags">
-          <span class="tag">          ✈️ ברטיסלבה
-</span>
-          <span class="tag">          🏔️ טטרות
-</span>
-          <span class="tag">          🎢 אנרג'ילנדיה
-</span>
-          <span class="tag">          🏰 זאקופנה וקרקוב
-</span>
+          <span class="tag">✈️ ברטיסלבה</span>
+          <span class="tag">🏔️ טטרות</span>
+          <span class="tag">🎢 אנרג'ילנדיה</span>
+          <span class="tag">🏰 זאקופנה וקרקוב</span>
         </div>
       </div>
       <div class="info-bar">
         <div class="info-item">
-          <span class="info-label">          אגרת סלובקיה
-</span>
-          <a class="info-link" href="https://eznamka.sk" target="_blank">          eznamka.sk ↗
-</a>
+          <span class="info-label">אגרות כביש</span>
+          <a class="info-link" href="https://eznamka.sk" target="_blank">SK: eznamka.sk ↗</a>
+          <a class="info-link" href="https://autopay.pl/en" target="_blank">PL: autopay.pl ↗</a>
         </div>
         <div class="info-item">
-          <span class="info-label">          אגרת פולין
-</span>
-          <a class="info-link" href="https://autopay.pl/en" target="_blank">          autopay.pl/en ↗
-</a>
+          <span class="info-label">🌤️ מזג אוויר באזורים</span>
+          <a class="info-link" href="https://www.accuweather.com/en/pl/bystra-podhalanska/269152/weather-forecast/269152" target="_blank">Bystra / Zator ↗</a>
+          <a class="info-link" href="https://www.accuweather.com/en/sk/liptovsky-mikulas/295982/weather-forecast/295982" target="_blank">Liptovský Mikuláš ↗</a>
         </div>
         <div class="info-item">
-          <span class="info-label">          חירום
-</span>
-          <span class="info-value">          📞 112
-</span>
+          <span class="info-label">חירום</span>
+          <span class="info-value">📞 112</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">ברטיסלבה</span>
+          <a class="info-link" href="https://www.accuweather.com/en/sk/bratislava/2972/weather-forecast/2972" target="_blank">מזג אוויר ↗</a>
         </div>
       </div>
       <!-- יום 0 -->
@@ -460,8 +445,7 @@
               איסוף הרכב השכור והגעה למלון AVIATOR GARNY HOTEL BRATISLAVA
             </div>
           </div>
-          <a class="act-nav" href="https://waze.com/ul?q=AVIATOR+GARNY+HOTEL+BRATISLAVA" target="_blank">          וויז
-</a>
+          <a class="act-nav" href="https://waze.com/ul?q=AVIATOR+GARNY+HOTEL+BRATISLAVA" target="_blank">וויז</a>
         </div>
         <div class="journal-section">
           <button class="journal-toggle-btn" onclick="toggleJournal(0)">
@@ -475,8 +459,7 @@
         </div>
         <div class="day-photos-container">
           <div class="day-photos-title">
-            <span>            📷 תמונות מיום 16/08
-</span>
+            <span>📷 תמונות מיום 16/08</span>
             <button class="upload-photo-btn" onclick="uploadCloudPhoto(0)">
               📷 הוסף תמונה
             </button>
@@ -513,8 +496,7 @@
               AVIATOR GARNY HOTEL BRATISLAVA • מנוחה ושינה קלה
             </div>
           </div>
-          <a class="act-nav" href="https://waze.com/ul?q=AVIATOR+GARNY+HOTEL+BRATISLAVA" target="_blank">          וויז
-</a>
+          <a class="act-nav" href="https://waze.com/ul?q=AVIATOR+GARNY+HOTEL+BRATISLAVA" target="_blank">וויז</a>
         </div>
         <div class="activity">
           <img class="act-thumb" src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=120" alt="Bystra" />
@@ -529,8 +511,7 @@
               התארגנות בבית, מנוחה והצטיידות ראשונית
             </div>
           </div>
-          <a class="act-nav" href="https://waze.com/ul?q=Bystra+Podhalanska+Poland" target="_blank">          וויז
-</a>
+          <a class="act-nav" href="https://waze.com/ul?q=Bystra+Podhalanska+Poland" target="_blank">וויז</a>
         </div>
         <div class="journal-section">
           <button class="journal-toggle-btn" onclick="toggleJournal(1)">
@@ -544,8 +525,7 @@
         </div>
         <div class="day-photos-container">
           <div class="day-photos-title">
-            <span>            📷 תמונות מיום 1
-</span>
+            <span>📷 תמונות מיום 1</span>
             <div class="cloud-btn-group">
               <button class="upload-photo-btn" onclick="uploadCloudPhoto(1)">
                 📷 הוסף תמונה
@@ -584,8 +564,7 @@
               הליכה מרהיבה בין צמרות העצים, עלייה ברכבל ונוף לפסגות הטטרה
             </div>
           </div>
-          <a class="act-nav" href="https://waze.com/ul?q=Bachledka+Treetop+Walk" target="_blank">          וויז
-</a>
+          <a class="act-nav" href="https://waze.com/ul?q=Bachledka+Treetop+Walk" target="_blank">וויז</a>
         </div>
         <div class="activity">
           <img class="act-thumb" src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=120" alt="Terma Bania" />
@@ -600,8 +579,7 @@
               בילוי בערב במרחצאות תרמיים מפנקים בביאלקה טטרנסקה
             </div>
           </div>
-          <a class="act-nav" href="https://waze.com/ul?q=Terma+Bania+Bialka+Tatrzanska" target="_blank">          וויז
-</a>
+          <a class="act-nav" href="https://waze.com/ul?q=Terma+Bania+Bialka+Tatrzanska" target="_blank">וויז</a>
         </div>
         <div class="journal-section">
           <button class="journal-toggle-btn" onclick="toggleJournal(2)">
@@ -615,8 +593,7 @@
         </div>
         <div class="day-photos-container">
           <div class="day-photos-title">
-            <span>            📷 תמונות מיום 2
-</span>
+            <span>📷 תמונות מיום 2</span>
             <div class="cloud-btn-group">
               <button class="upload-photo-btn" onclick="uploadCloudPhoto(2)">
                 📷 הוסף תמונה
@@ -655,8 +632,7 @@
               עליה ברכבל לפסגה, תצפית פנורמית וארוחה במסעדה הררית
             </div>
           </div>
-          <a class="act-nav" href="https://waze.com/ul?q=Gubalowka+Zakopane" target="_blank">          וויז
-</a>
+          <a class="act-nav" href="https://waze.com/ul?q=Gubalowka+Zakopane" target="_blank">וויז</a>
         </div>
         <div class="activity">
           <img class="act-thumb" src="https://images.unsplash.com/photo-1513151233558-d860c5398176?w=120" alt="Krupówki" />
@@ -671,8 +647,7 @@
               דוכני גבינות Oscypek מעושנות, מזכרות וקניות
             </div>
           </div>
-          <a class="act-nav" href="https://waze.com/ul?q=Krupowki+Zakopane" target="_blank">          וויז
-</a>
+          <a class="act-nav" href="https://waze.com/ul?q=Krupowki+Zakopane" target="_blank">וויז</a>
         </div>
         <div class="journal-section">
           <button class="journal-toggle-btn" onclick="toggleJournal(3)">
@@ -686,8 +661,7 @@
         </div>
         <div class="day-photos-container">
           <div class="day-photos-title">
-            <span>            📷 תמונות מיום 3
-</span>
+            <span>📷 תמונות מיום 3</span>
             <button class="upload-photo-btn" onclick="uploadCloudPhoto(3)">
               📷 הוסף תמונה
             </button>
@@ -724,8 +698,7 @@
               שייט חווייתי ומהנה בנהר דונייץ
             </div>
           </div>
-          <a class="act-nav" href="https://waze.com/ul?q=Dunajec+Rafting" target="_blank">          וויז
-</a>
+          <a class="act-nav" href="https://waze.com/ul?q=Dunajec+Rafting" target="_blank">וויז</a>
         </div>
         <div class="activity">
           <img class="act-thumb" src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=120" alt="Czorsztyn" />
@@ -740,8 +713,7 @@
               אקשן מול אגם טשורשטין, אומגה אתגרית ומגלשת הרים מהירה
             </div>
           </div>
-          <a class="act-nav" href="https://waze.com/ul?q=Czorsztyn+Castle" target="_blank">          וויז
-</a>
+          <a class="act-nav" href="https://waze.com/ul?q=Czorsztyn+Castle" target="_blank">וויז</a>
         </div>
         <div class="journal-section">
           <button class="journal-toggle-btn" onclick="toggleJournal(4)">
@@ -755,8 +727,7 @@
         </div>
         <div class="day-photos-container">
           <div class="day-photos-title">
-            <span>            📷 תמונות מיום 4
-</span>
+            <span>📷 תמונות מיום 4</span>
             <button class="upload-photo-btn" onclick="uploadCloudPhoto(4)">
               📷 הוסף תמונה
             </button>
@@ -793,8 +764,7 @@
               פארק הדינוזאורים והמיתולוגיה, יום מהנה לילדים
             </div>
           </div>
-          <a class="act-nav" href="https://waze.com/ul?q=Zatorland+Zator" target="_blank">          וויז
-</a>
+          <a class="act-nav" href="https://waze.com/ul?q=Zatorland+Zator" target="_blank">וויז</a>
         </div>
         <div class="activity">
           <img class="act-thumb" src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=120" alt="Sloneczne Hotel" />
@@ -809,8 +779,7 @@
               צ'ק-אין והתמקמות בזאטור
             </div>
           </div>
-          <a class="act-nav" href="https://waze.com/ul?q=SLONECZNE+WZGORZE+ZATOR" target="_blank">          וויז
-</a>
+          <a class="act-nav" href="https://waze.com/ul?q=SLONECZNE+WZGORZE+ZATOR" target="_blank">וויז</a>
         </div>
         <div class="journal-section">
           <button class="journal-toggle-btn" onclick="toggleJournal(5)">
@@ -824,8 +793,7 @@
         </div>
         <div class="day-photos-container">
           <div class="day-photos-title">
-            <span>            📷 תמונות מיום 5
-</span>
+            <span>📷 תמונות מיום 5</span>
             <button class="upload-photo-btn" onclick="uploadCloudPhoto(5)">
               📷 הוסף תמונה
             </button>
@@ -862,8 +830,7 @@
               ביקור בגן החיות הממוקם ביער הירוק
             </div>
           </div>
-          <a class="act-nav" href="https://waze.com/ul?q=Zoo+Krakow" target="_blank">          וויז
-</a>
+          <a class="act-nav" href="https://waze.com/ul?q=Zoo+Krakow" target="_blank">וויז</a>
         </div>
         <div class="activity">
           <img class="act-thumb" src="https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?w=120" alt="Bonarka" />
@@ -878,8 +845,7 @@
               טיול בעיר העתיקה וקניות מרכזיות (כולל Primark)
             </div>
           </div>
-          <a class="act-nav" href="https://waze.com/ul?q=Bonarka+Krakow" target="_blank">          וויז
-</a>
+          <a class="act-nav" href="https://waze.com/ul?q=Bonarka+Krakow" target="_blank">וויז</a>
         </div>
         <div class="journal-section">
           <button class="journal-toggle-btn" onclick="toggleJournal(6)">
@@ -893,8 +859,7 @@
         </div>
         <div class="day-photos-container">
           <div class="day-photos-title">
-            <span>            📷 תמונות מיום 6
-</span>
+            <span>📷 תמונות מיום 6</span>
             <button class="upload-photo-btn" onclick="uploadCloudPhoto(6)">
               📷 הוסף תמונה
             </button>
@@ -931,8 +896,7 @@
               יום שלם בפארק הרכבות והאטרקציות הגדול באירופה!
             </div>
           </div>
-          <a class="act-nav" href="https://waze.com/ul?q=Energylandia+Zator" target="_blank">          וויז
-</a>
+          <a class="act-nav" href="https://waze.com/ul?q=Energylandia+Zator" target="_blank">וויז</a>
         </div>
         <div class="journal-section">
           <button class="journal-toggle-btn" onclick="toggleJournal(7)">
@@ -946,8 +910,7 @@
         </div>
         <div class="day-photos-container">
           <div class="day-photos-title">
-            <span>            📷 תמונות מיום 7
-</span>
+            <span>📷 תמונות מיום 7</span>
             <button class="upload-photo-btn" onclick="uploadCloudPhoto(7)">
               📷 הוסף תמונה
             </button>
@@ -998,8 +961,7 @@
               התמקמות בבית הנופש בסלובקיה
             </div>
           </div>
-          <a class="act-nav" href="https://waze.com/ul?q=Dovolenkovy+Dom+Vranka" target="_blank">          וויז
-</a>
+          <a class="act-nav" href="https://waze.com/ul?q=Dovolenkovy+Dom+Vranka" target="_blank">וויז</a>
         </div>
         <div class="journal-section">
           <button class="journal-toggle-btn" onclick="toggleJournal(8)">
@@ -1013,8 +975,7 @@
         </div>
         <div class="day-photos-container">
           <div class="day-photos-title">
-            <span>            📷 תמונות מיום 8
-</span>
+            <span>📷 תמונות מיום 8</span>
             <button class="upload-photo-btn" onclick="uploadCloudPhoto(8)">
               📷 הוסף תמונה
             </button>
@@ -1051,8 +1012,7 @@
               מסלול הליכה יפהפה בתוך נקיק סלעים, גשרים ומפלים
             </div>
           </div>
-          <a class="act-nav" href="https://waze.com/ul?q=Janosikove+Diery" target="_blank">          וויז
-</a>
+          <a class="act-nav" href="https://waze.com/ul?q=Janosikove+Diery" target="_blank">וויז</a>
         </div>
         <div class="activity">
           <img class="act-thumb" src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=120" alt="Besenova" />
@@ -1067,8 +1027,7 @@
               בילוי בבריכות תרמיות ומגלשות מים
             </div>
           </div>
-          <a class="act-nav" href="https://waze.com/ul?q=Besenova+Aquapark" target="_blank">          וויז
-</a>
+          <a class="act-nav" href="https://waze.com/ul?q=Besenova+Aquapark" target="_blank">וויז</a>
         </div>
         <div class="journal-section">
           <button class="journal-toggle-btn" onclick="toggleJournal(9)">
@@ -1082,8 +1041,7 @@
         </div>
         <div class="day-photos-container">
           <div class="day-photos-title">
-            <span>            📷 תמונות מיום 9
-</span>
+            <span>📷 תמונות מיום 9</span>
             <button class="upload-photo-btn" onclick="uploadCloudPhoto(9)">
               📷 הוסף תמונה
             </button>
@@ -1120,8 +1078,7 @@
               מפגש מקרוב עם חיות בר ובית, האכלה וחוויה לילדים
             </div>
           </div>
-          <a class="act-nav" href="https://waze.com/ul?q=ZOOKONTAKT+Liptovsky+Mikulas" target="_blank">          וויז
-</a>
+          <a class="act-nav" href="https://waze.com/ul?q=ZOOKONTAKT+Liptovsky+Mikulas" target="_blank">וויז</a>
         </div>
         <div class="activity">
           <img class="act-thumb" src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=120" alt="Fun Park Ziarce" />
@@ -1136,8 +1093,7 @@
               גלישה חווייתית ומלאת אדרנלין במורד ההר
             </div>
           </div>
-          <a class="act-nav" href="https://waze.com/ul?q=Fun+Park+Ziarce" target="_blank">          וויז
-</a>
+          <a class="act-nav" href="https://waze.com/ul?q=Fun+Park+Ziarce" target="_blank">וויז</a>
         </div>
         <div class="journal-section">
           <button class="journal-toggle-btn" onclick="toggleJournal(10)">
@@ -1151,8 +1107,7 @@
         </div>
         <div class="day-photos-container">
           <div class="day-photos-title">
-            <span>            📷 תמונות מיום 10
-</span>
+            <span>📷 תמונות מיום 10</span>
             <button class="upload-photo-btn" onclick="uploadCloudPhoto(10)">
               📷 הוסף תמונה
             </button>
@@ -1189,8 +1144,7 @@
               יום שלם בפארק המים הגדול בסלובקיה!
             </div>
           </div>
-          <a class="act-nav" href="https://waze.com/ul?q=Aquapark+Tatralandia" target="_blank">          וויז
-</a>
+          <a class="act-nav" href="https://waze.com/ul?q=Aquapark+Tatralandia" target="_blank">וויז</a>
         </div>
         <div class="journal-section">
           <button class="journal-toggle-btn" onclick="toggleJournal(11)">
@@ -1204,8 +1158,7 @@
         </div>
         <div class="day-photos-container">
           <div class="day-photos-title">
-            <span>            📷 תמונות מיום 11
-</span>
+            <span>📷 תמונות מיום 11</span>
             <button class="upload-photo-btn" onclick="uploadCloudPhoto(11)">
               📷 הוסף תמונה
             </button>
@@ -1255,8 +1208,7 @@
         </div>
         <div class="day-photos-container">
           <div class="day-photos-title">
-            <span>            📷 תמונות מיום 12
-</span>
+            <span>📷 תמונות מיום 12</span>
             <button class="upload-photo-btn" onclick="uploadCloudPhoto(12)">
               📷 הוסף תמונה
             </button>
@@ -1293,8 +1245,7 @@
               AVIATOR GARNY HOTEL BRATISLAVA
             </div>
           </div>
-          <a class="act-nav" href="https://waze.com/ul?q=AVIATOR+GARNY+HOTEL+BRATISLAVA" target="_blank">          וויז
-</a>
+          <a class="act-nav" href="https://waze.com/ul?q=AVIATOR+GARNY+HOTEL+BRATISLAVA" target="_blank">וויז</a>
         </div>
         <div class="activity">
           <img class="act-thumb" src="https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=120" alt="Eurovea" />
@@ -1309,8 +1260,7 @@
               סיור ברכבת תיירים בברטיסלבה ומשחק במזרקות ליד קניון Eurovea
             </div>
           </div>
-          <a class="act-nav" href="https://waze.com/ul?q=Eurovea+Bratislava" target="_blank">          וויז
-</a>
+          <a class="act-nav" href="https://waze.com/ul?q=Eurovea+Bratislava" target="_blank">וויז</a>
         </div>
         <div class="journal-section">
           <button class="journal-toggle-btn" onclick="toggleJournal(13)">
@@ -1324,8 +1274,7 @@
         </div>
         <div class="day-photos-container">
           <div class="day-photos-title">
-            <span>            📷 תמונות מיום 13
-</span>
+            <span>📷 תמונות מיום 13</span>
             <button class="upload-photo-btn" onclick="uploadCloudPhoto(13)">
               📷 הוסף תמונה
             </button>
@@ -1375,8 +1324,7 @@
         </div>
         <div class="day-photos-container">
           <div class="day-photos-title">
-            <span>            📷 תמונות מיום 14
-</span>
+            <span>📷 תמונות מיום 14</span>
             <button class="upload-photo-btn" onclick="uploadCloudPhoto(14)">
               📷 הוסף תמונה
             </button>
@@ -1411,8 +1359,7 @@
                 פולין • 17/08 - 21/08 (4 לילות)
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=Bystra+Podhalanska+Poland" target="_blank">            וויז
-</a>
+            <a class="act-nav" href="https://waze.com/ul?q=Bystra+Podhalanska+Poland" target="_blank">וויז</a>
           </div>
         </div>
         <div class="item-desc">
@@ -1431,8 +1378,7 @@
                 פולין (זאטור) • 21/08 - 24/08 (3 לילות)
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=SLONECZNE+WZGORZE+ZATOR" target="_blank">            וויז
-</a>
+            <a class="act-nav" href="https://waze.com/ul?q=SLONECZNE+WZGORZE+ZATOR" target="_blank">וויז</a>
           </div>
         </div>
         <div class="item-desc">
@@ -1451,8 +1397,7 @@
                 סלובקיה • 24/08 - 29/08 (5 לילות)
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=Dovolenkovy+Dom+Vranka" target="_blank">            וויז
-</a>
+            <a class="act-nav" href="https://waze.com/ul?q=Dovolenkovy+Dom+Vranka" target="_blank">וויז</a>
           </div>
         </div>
         <div class="item-desc">
@@ -1471,8 +1416,7 @@
                 ברטיסלבה • 17/08 &amp; 29/08 (2 לילות)
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=AVIATOR+GARNY+HOTEL+BRATISLAVA" target="_blank">            וויז
-</a>
+            <a class="act-nav" href="https://waze.com/ul?q=AVIATOR+GARNY+HOTEL+BRATISLAVA" target="_blank">וויז</a>
           </div>
         </div>
         <div class="item-desc">
@@ -1494,12 +1438,9 @@
         </p>
       </div>
       <div class="section-header">
-        <span class="section-flag">        🇵🇱
-</span>
-        <span class="section-title">        זאקופנה ופולין ההררית
-</span>
-        <div class="section-line">
-        </div>
+        <span class="section-flag">🇵🇱</span>
+        <span class="section-title">זאקופנה ופולין ההררית</span>
+        <div class="section-line"></div>
       </div>
       <div class="item-card">
         <div class="item-card-main">
@@ -1513,8 +1454,7 @@
                 📍 מדרחוב Krupówki, זאקופנה
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=Karczma+Po+Zboju+Zakopane" target="_blank">            וויז
-</a>
+            <a class="act-nav" href="https://waze.com/ul?q=Karczma+Po+Zboju+Zakopane" target="_blank">וויז</a>
           </div>
         </div>
         <div class="item-desc">
@@ -1533,8 +1473,7 @@
                 📍 זאקופנה
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=Bakowo+Zohylina+Wyznio+Zakopane" target="_blank">            וויז
-</a>
+            <a class="act-nav" href="https://waze.com/ul?q=Bakowo+Zohylina+Wyznio+Zakopane" target="_blank">וויז</a>
           </div>
         </div>
         <div class="item-desc">
@@ -1542,12 +1481,9 @@
         </div>
       </div>
       <div class="section-header">
-        <span class="section-flag">        🏰
-</span>
-        <span class="section-title">        קרקוב והעיר העתיקה
-</span>
-        <div class="section-line">
-        </div>
+        <span class="section-flag">🏰</span>
+        <span class="section-title">קרקוב והעיר העתיקה</span>
+        <div class="section-line"></div>
       </div>
       <div class="item-card">
         <div class="item-card-main">
@@ -1561,8 +1497,7 @@
                 📍 העיר העתיקה / רובע קז'ימייז'
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=Pierogi+MR+Vincent+Krakow" target="_blank">            וויז
-</a>
+            <a class="act-nav" href="https://waze.com/ul?q=Pierogi+MR+Vincent+Krakow" target="_blank">וויז</a>
           </div>
         </div>
         <div class="item-desc">
@@ -1581,8 +1516,7 @@
                 📍 Plac Szczepański 8, קרקוב
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=Morskie+Oko+Krakow" target="_blank">            וויז
-</a>
+            <a class="act-nav" href="https://waze.com/ul?q=Morskie+Oko+Krakow" target="_blank">וויז</a>
           </div>
         </div>
         <div class="item-desc">
@@ -1590,12 +1524,9 @@
         </div>
       </div>
       <div class="section-header">
-        <span class="section-flag">        🇸🇰
-</span>
-        <span class="section-title">        הטטרות וליפטובסקי מיקולאש
-</span>
-        <div class="section-line">
-        </div>
+        <span class="section-flag">🇸🇰</span>
+        <span class="section-title">הטטרות וליפטובסקי מיקולאש</span>
+        <div class="section-line"></div>
       </div>
       <div class="item-card">
         <div class="item-card-main">
@@ -1609,8 +1540,7 @@
                 📍 מרכז ליפטובסקי מיקולאש
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=Route+66+Liptovsky+Mikulas" target="_blank">            וויז
-</a>
+            <a class="act-nav" href="https://waze.com/ul?q=Route+66+Liptovsky+Mikulas" target="_blank">וויז</a>
           </div>
         </div>
         <div class="item-desc">
@@ -1629,8 +1559,7 @@
                 📍 בשנובה / איבאצ'נובה
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=Koliba+Besenova" target="_blank">            וויז
-</a>
+            <a class="act-nav" href="https://waze.com/ul?q=Koliba+Besenova" target="_blank">וויז</a>
           </div>
         </div>
         <div class="item-desc">
@@ -1638,12 +1567,9 @@
         </div>
       </div>
       <div class="section-header">
-        <span class="section-flag">        🏙️
-</span>
-        <span class="section-title">        ברטיסלבה
-</span>
-        <div class="section-line">
-        </div>
+        <span class="section-flag">🏙️</span>
+        <span class="section-title">ברטיסלבה</span>
+        <div class="section-line"></div>
       </div>
       <div class="item-card">
         <div class="item-card-main">
@@ -1657,8 +1583,7 @@
                 📍 קורסו הדנובה, ברטיסלבה
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=Eurovea+Bratislava" target="_blank">            וויז
-</a>
+            <a class="act-nav" href="https://waze.com/ul?q=Eurovea+Bratislava" target="_blank">וויז</a>
           </div>
         </div>
         <div class="item-desc">
@@ -1680,12 +1605,9 @@
         </p>
       </div>
       <div class="section-header">
-        <span class="section-flag">        🇸🇰
-</span>
-        <span class="section-title">        סלובקיה – פארקים וטבע
-</span>
-        <div class="section-line">
-        </div>
+        <span class="section-flag">🇸🇰</span>
+        <span class="section-title">סלובקיה – פארקים וטבע</span>
+        <div class="section-line"></div>
       </div>
       <div class="item-card">
         <div class="item-card-main">
@@ -1699,8 +1621,7 @@
                 📍 ליפטובסקי מיקולאש
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=Aquapark+Tatralandia" target="_blank">            וויז
-</a>
+            <a class="act-nav" href="https://waze.com/ul?q=Aquapark+Tatralandia" target="_blank">וויז</a>
           </div>
         </div>
         <div class="item-desc">
@@ -1719,8 +1640,7 @@
                 📍 בשנובה, סלובקיה
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=Besenova+Aquapark" target="_blank">            וויז
-</a>
+            <a class="act-nav" href="https://waze.com/ul?q=Besenova+Aquapark" target="_blank">וויז</a>
           </div>
         </div>
         <div class="item-desc">
@@ -1739,8 +1659,7 @@
                 📍 ליפטובסקי מיקולאש
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=ZOOKONTAKT+Liptovsky+Mikulas" target="_blank">            וויז
-</a>
+            <a class="act-nav" href="https://waze.com/ul?q=ZOOKONTAKT+Liptovsky+Mikulas" target="_blank">וויז</a>
           </div>
         </div>
         <div class="item-desc">
@@ -1759,8 +1678,7 @@
                 📍 טרחובא
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=Janosikove+Diery" target="_blank">            וויז
-</a>
+            <a class="act-nav" href="https://waze.com/ul?q=Janosikove+Diery" target="_blank">וויז</a>
           </div>
         </div>
         <div class="item-desc">
@@ -1779,8 +1697,7 @@
                 📍 עמק דמנובסקה
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=Fun+Park+Ziarce" target="_blank">            וויז
-</a>
+            <a class="act-nav" href="https://waze.com/ul?q=Fun+Park+Ziarce" target="_blank">וויז</a>
           </div>
         </div>
         <div class="item-desc">
@@ -1788,12 +1705,9 @@
         </div>
       </div>
       <div class="section-header">
-        <span class="section-flag">        🇵🇱
-</span>
-        <span class="section-title">        פולין וזאקופנה
-</span>
-        <div class="section-line">
-        </div>
+        <span class="section-flag">🇵🇱</span>
+        <span class="section-title">פולין וזאקופנה</span>
+        <div class="section-line"></div>
       </div>
       <div class="item-card">
         <div class="item-card-main">
@@ -1807,8 +1721,7 @@
                 📍 זאטור, פולין
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=Energylandia+Zator" target="_blank">            וויז
-</a>
+            <a class="act-nav" href="https://waze.com/ul?q=Energylandia+Zator" target="_blank">וויז</a>
           </div>
         </div>
         <div class="item-desc">
@@ -1827,8 +1740,7 @@
                 📍 זאטור, פולין
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=Zatorland+Zator" target="_blank">            וויז
-</a>
+            <a class="act-nav" href="https://waze.com/ul?q=Zatorland+Zator" target="_blank">וויז</a>
           </div>
         </div>
         <div class="item-desc">
@@ -1847,8 +1759,7 @@
                 📍 זאדז'אר (גבול פולין-סלובקיה)
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=Bachledka+Treetop+Walk" target="_blank">            וויז
-</a>
+            <a class="act-nav" href="https://waze.com/ul?q=Bachledka+Treetop+Walk" target="_blank">וויז</a>
           </div>
         </div>
         <div class="item-desc">
@@ -1867,8 +1778,7 @@
                 📍 ביאלקה טטרנסקה
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=Terma+Bania+Bialka+Tatrzanska" target="_blank">            וויז
-</a>
+            <a class="act-nav" href="https://waze.com/ul?q=Terma+Bania+Bialka+Tatrzanska" target="_blank">וויז</a>
           </div>
         </div>
         <div class="item-desc">
@@ -1887,8 +1797,7 @@
                 📍 זאקופנה
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=Gubalowka+Zakopane" target="_blank">            וויז
-</a>
+            <a class="act-nav" href="https://waze.com/ul?q=Gubalowka+Zakopane" target="_blank">וויז</a>
           </div>
         </div>
         <div class="item-desc">
@@ -1907,8 +1816,7 @@
                 📍 שמורת פניני (Pieniny)
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=Dunajec+Rafting" target="_blank">            וויז
-</a>
+            <a class="act-nav" href="https://waze.com/ul?q=Dunajec+Rafting" target="_blank">וויז</a>
           </div>
         </div>
         <div class="item-desc">
@@ -1927,8 +1835,7 @@
                 📍 טשורשטין
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=Czorsztyn+Castle" target="_blank">            וויז
-</a>
+            <a class="act-nav" href="https://waze.com/ul?q=Czorsztyn+Castle" target="_blank">וויז</a>
           </div>
         </div>
         <div class="item-desc">
@@ -1947,8 +1854,7 @@
                 📍 קרקוב
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=Zoo+Krakow" target="_blank">            וויז
-</a>
+            <a class="act-nav" href="https://waze.com/ul?q=Zoo+Krakow" target="_blank">וויז</a>
           </div>
         </div>
         <div class="item-desc">
@@ -1970,12 +1876,9 @@
         </p>
       </div>
       <div class="section-header">
-        <span class="section-flag">        🏰
-</span>
-        <span class="section-title">        אזור קרקוב
-</span>
-        <div class="section-line">
-        </div>
+        <span class="section-flag">🏰</span>
+        <span class="section-title">אזור קרקוב</span>
+        <div class="section-line"></div>
       </div>
       <div class="item-card">
         <div class="item-card-main">
@@ -1989,8 +1892,7 @@
                 📍 קרקוב, פולין
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=Bonarka+Krakow" target="_blank">            וויז
-</a>
+            <a class="act-nav" href="https://waze.com/ul?q=Bonarka+Krakow" target="_blank">וויז</a>
           </div>
         </div>
         <div class="item-desc">
@@ -2009,8 +1911,7 @@
                 📍 צמוד לתחנה המרכזית, קרקוב
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=Galeria+Krakowska" target="_blank">            וויז
-</a>
+            <a class="act-nav" href="https://waze.com/ul?q=Galeria+Krakowska" target="_blank">וויז</a>
           </div>
         </div>
         <div class="item-desc">
@@ -2018,12 +1919,9 @@
         </div>
       </div>
       <div class="section-header">
-        <span class="section-flag">        🇵🇱
-</span>
-        <span class="section-title">        אזור זאקופנה
-</span>
-        <div class="section-line">
-        </div>
+        <span class="section-flag">🇵🇱</span>
+        <span class="section-title">אזור זאקופנה</span>
+        <div class="section-line"></div>
       </div>
       <div class="item-card">
         <div class="item-card-main">
@@ -2037,8 +1935,7 @@
                 📍 מרכז זאקופנה
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=Krupowki+Zakopane" target="_blank">            וויז
-</a>
+            <a class="act-nav" href="https://waze.com/ul?q=Krupowki+Zakopane" target="_blank">וויז</a>
           </div>
         </div>
         <div class="item-desc">
@@ -2046,12 +1943,9 @@
         </div>
       </div>
       <div class="section-header">
-        <span class="section-flag">        🇸🇰
-</span>
-        <span class="section-title">        אזור סלובקיה והטטרות
-</span>
-        <div class="section-line">
-        </div>
+        <span class="section-flag">🇸🇰</span>
+        <span class="section-title">אזור סלובקיה והטטרות</span>
+        <div class="section-line"></div>
       </div>
       <div class="item-card">
         <div class="item-card-main">
@@ -2065,8 +1959,7 @@
                 📍 ליפטובסקי מיקולאש
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=TESCO+Liptovsky+Mikulas" target="_blank">            וויז
-</a>
+            <a class="act-nav" href="https://waze.com/ul?q=TESCO+Liptovsky+Mikulas" target="_blank">וויז</a>
           </div>
         </div>
         <div class="item-desc">
@@ -2074,12 +1967,9 @@
         </div>
       </div>
       <div class="section-header">
-        <span class="section-flag">        🏙️
-</span>
-        <span class="section-title">        אזור ברטיסלבה
-</span>
-        <div class="section-line">
-        </div>
+        <span class="section-flag">🏙️</span>
+        <span class="section-title">אזור ברטיסלבה</span>
+        <div class="section-line"></div>
       </div>
       <div class="item-card">
         <div class="item-card-main">
@@ -2093,8 +1983,7 @@
                 📍 ברטיסלבה
               </div>
             </div>
-            <a class="act-nav" href="https://waze.com/ul?q=Eurovea+Bratislava" target="_blank">            וויז
-</a>
+            <a class="act-nav" href="https://waze.com/ul?q=Eurovea+Bratislava" target="_blank">וויז</a>
           </div>
         </div>
         <div class="item-desc">
@@ -2229,8 +2118,7 @@
     <!-- Lightbox Modal -->
     <div id="lightbox-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.92); z-index:9999; flex-direction:column; justify-content:space-between; align-items:center; padding:20px 10px;">
       <div style="width:100%; display:flex; justify-content:space-between; align-items:center; color:#fff; font-size:14px; padding:0 10px;">
-        <span id="lightbox-counter">        1 / 1
-</span>
+        <span id="lightbox-counter">1 / 1</span>
         <div style="display:flex; gap:12px;">
           <button onclick="deleteCurrentPhoto()" style="background:#C0392B; color:#fff; border:none; padding:6px 12px; border-radius:8px; font-weight:bold; cursor:pointer; font-family:'Heebo';">
             🗑️ מחק תמונה
@@ -2257,7 +2145,7 @@
       🇨🇿 🇸🇰 🇵🇱 טיול סלובקיה ופולין 2026 • שנזכה לנסיעות טובות!
     </footer>
     <script>
-      const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwlI499giYfYupYwAh1kv4Fv4BcoczhfbMSTfb0kRZhuQl99BGYG_qDzsQJizbvf-CBIA/exec";
+      const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwQs5aN9cklm4mmFlwtVQzUx50R80ZSm-toLVIIzmCbMorQE5appdHTa7tSGQUWfdckSQ/exec";
 
       function switchTab(tab) {
         document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
