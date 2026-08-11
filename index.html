@@ -138,15 +138,50 @@
       .hero-tags { display: flex; justify-content: center; gap: 6px; margin-top: 10px; flex-wrap: wrap; }
       .tag { background: rgba(244,162,97,0.15); border: 1px solid rgba(244,162,97,0.3); color: var(--accent); font-size: 11px; font-weight: 600; padding: 3px 8px; border-radius: 20px; }
 
-      /* עיצוב ווידג'טי מזג אוויר שעתיים מתקדמים */
-      .info-bar {
+      /* עיצוב אקורדיון מזג אוויר נפתח */
+      .weather-accordion-container {
+        margin: 12px;
         background: var(--card);
-        border-bottom: 1px solid var(--border);
-        padding: 12px 10px;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        overflow: hidden;
+      }
+      .weather-accordion-btn {
+        width: 100%;
+        background: none;
+        border: none;
+        padding: 12px 14px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        color: var(--text);
+        font-family: 'Heebo', sans-serif;
+      }
+      .weather-main-title {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 13px;
+        font-weight: 800;
+        color: var(--accent);
+      }
+      .weather-quick-summary {
+        font-size: 11px;
+        color: var(--sub);
+      }
+      .weather-accordion-content {
+        display: none;
+        padding: 0 12px 12px;
+        border-top: 1px solid var(--border);
+        background: rgba(0,0,0,0.1);
+      }
+
+      .info-bar {
         display: flex;
         flex-direction: column;
         gap: 10px;
-        margin-bottom: 16px;
+        padding-top: 10px;
       }
       .weather-widget {
         background: rgba(255,255,255,0.03);
@@ -163,7 +198,6 @@
       .ww-title { font-size: 12px; font-weight: 800; color: var(--accent); }
       .ww-current { font-size: 12px; font-weight: 700; color: var(--text); }
       
-      /* רשימת שעות גללה הצידה */
       .ww-hourly-scroll {
         display: flex;
         gap: 8px;
@@ -192,7 +226,8 @@
         display: flex;
         justify-content: space-around;
         font-size: 11px;
-        padding-top: 6px;
+        padding-top: 8px;
+        margin-top: 8px;
         border-top: 1px dashed var(--border);
       }
       .info-link { font-size: 11px; font-weight: 600; color: var(--blue); text-decoration: none; }
@@ -442,57 +477,68 @@
         </div>
       </div>
 
-      <!-- ווידג'טי מזג אוויר שעתיים לפי אזורים -->
-      <div class="info-bar">
-        <!-- Bystra / Zakopane -->
-        <div class="weather-widget" id="ww-bystra">
-          <div class="ww-header">
-            <span class="ww-title">🌲 זאקופנה / בייסטרה</span>
-            <span class="ww-current">טוען...</span>
+      <!-- באנר אקורדיון מזג אוויר נפתח -->
+      <div class="weather-accordion-container">
+        <button class="weather-accordion-btn" onclick="toggleWeatherAccordion()">
+          <div class="weather-main-title">
+            <span>🌤️ תחזית מזג אוויר חיה לפי אזורים</span>
+            <span id="weather-accordion-arrow" style="font-size: 11px;">▼</span>
           </div>
-          <div class="ww-hourly-scroll">טוען תחזית שעתית...</div>
-        </div>
+          <div class="weather-quick-summary" id="weather-summary-text">לחץ לפתיחת השעות</div>
+        </button>
+        <div class="weather-accordion-content" id="weather-accordion-body">
+          <div class="info-bar">
+            <!-- Bystra / Zakopane -->
+            <div class="weather-widget" id="ww-bystra">
+              <div class="ww-header">
+                <span class="ww-title">🌲 זאקופנה / בייסטרה</span>
+                <span class="ww-current">טוען...</span>
+              </div>
+              <div class="ww-hourly-scroll">טוען תחזית שעתית...</div>
+            </div>
 
-        <!-- Zator / Energylandia -->
-        <div class="weather-widget" id="ww-zator">
-          <div class="ww-header">
-            <span class="ww-title">🎢 זאטור / אנרג'ילנדיה</span>
-            <span class="ww-current">טוען...</span>
+            <!-- Zator / Energylandia -->
+            <div class="weather-widget" id="ww-zator">
+              <div class="ww-header">
+                <span class="ww-title">🎢 זאטור / אנרג'ילנדיה</span>
+                <span class="ww-current">טוען...</span>
+              </div>
+              <div class="ww-hourly-scroll">טוען תחזית שעתית...</div>
+            </div>
+
+            <!-- Krakow -->
+            <div class="weather-widget" id="ww-krakow">
+              <div class="ww-header">
+                <span class="ww-title">🏰 קרקוב</span>
+                <span class="ww-current">טוען...</span>
+              </div>
+              <div class="ww-hourly-scroll">טוען תחזית שעתית...</div>
+            </div>
+
+            <!-- Tatras / Liptovsky Mikulas -->
+            <div class="weather-widget" id="ww-liptovsky">
+              <div class="ww-header">
+                <span class="ww-title">🏔️ ליפטובסקי / טטרות</span>
+                <span class="ww-current">טוען...</span>
+              </div>
+              <div class="ww-hourly-scroll">טוען תחזית שעתית...</div>
+            </div>
+
+            <!-- Bratislava -->
+            <div class="weather-widget" id="ww-bratislava">
+              <div class="ww-header">
+                <span class="ww-title">🏙️ ברטיסלבה</span>
+                <span class="ww-current">טוען...</span>
+              </div>
+              <div class="ww-hourly-scroll">טוען תחזית שעתית...</div>
+            </div>
+
+            <div class="ww-links">
+              <a class="info-link" href="https://eznamka.sk" target="_blank">אגרת כביש SK ↗</a>
+              <a class="info-link" href="https://autopay.pl/en" target="_blank">אגרת כביש PL ↗</a>
+              <span style="color:var(--sub)">📞 חירום: 112</span>
+            </div>
           </div>
-          <div class="ww-hourly-scroll">טוען תחזית שעתית...</div>
-        </div>
-
-        <!-- Krakow -->
-        <div class="weather-widget" id="ww-krakow">
-          <div class="ww-header">
-            <span class="ww-title">🏰 קרקוב</span>
-            <span class="ww-current">טוען...</span>
-          </div>
-          <div class="ww-hourly-scroll">טוען תחזית שעתית...</div>
-        </div>
-
-        <!-- Tatras / Liptovsky Mikulas -->
-        <div class="weather-widget" id="ww-liptovsky">
-          <div class="ww-header">
-            <span class="ww-title">🏔️ ליפטובסקי / טטרות</span>
-            <span class="ww-current">טוען...</span>
-          </div>
-          <div class="ww-hourly-scroll">טוען תחזית שעתית...</div>
-        </div>
-
-        <!-- Bratislava -->
-        <div class="weather-widget" id="ww-bratislava">
-          <div class="ww-header">
-            <span class="ww-title">🏙️ ברטיסלבה</span>
-            <span class="ww-current">טוען...</span>
-          </div>
-          <div class="ww-hourly-scroll">טוען תחזית שעתית...</div>
-        </div>
-
-        <div class="ww-links">
-          <a class="info-link" href="https://eznamka.sk" target="_blank">אגרת כביש SK ↗</a>
-          <a class="info-link" href="https://autopay.pl/en" target="_blank">אגרת כביש PL ↗</a>
-          <span style="color:var(--sub)">📞 חירום: 112</span>
         </div>
       </div>
 
@@ -2261,6 +2307,18 @@
         }
       }
 
+      function toggleWeatherAccordion() {
+        const content = document.getElementById('weather-accordion-body');
+        const arrow = document.getElementById('weather-accordion-arrow');
+        if (content.style.display === 'block') {
+          content.style.display = 'none';
+          arrow.textContent = '▼';
+        } else {
+          content.style.display = 'block';
+          arrow.textContent = '▲';
+        }
+      }
+
       function renderChart() {
         const ctx = document.getElementById('expensesChart').getContext('2d');
         new Chart(ctx, {
@@ -2291,6 +2349,8 @@
           { id: 'ww-bratislava', lat: 48.1486, lng: 17.1077 } // ברטיסלבה
         ];
 
+        let firstTemp = '';
+
         for (let loc of locations) {
           try {
             const res = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${loc.lat}&longitude=${loc.lng}&hourly=temperature_2m,weather_code&current=temperature_2m,weather_code&timezone=auto`);
@@ -2300,12 +2360,15 @@
             if (!container) continue;
 
             if (data && data.current && data.hourly) {
-              // עדכון טמפרטורה נוכחית בכותרת
               const curTemp = Math.round(data.current.temperature_2m);
               const curDesc = getWeatherIconAndDesc(data.current.weather_code);
               container.querySelector('.ww-current').textContent = `${curTemp}°C • ${curDesc.text}`;
 
-              // יצירת רשימת שעות (הצגת 24 שעות מהשעה הנוכחית)
+              if (!firstTemp) {
+                firstTemp = `${curTemp}°C ${curDesc.icon}`;
+                document.getElementById('weather-summary-text').textContent = `זאקופנה כרגע: ${firstTemp} (לחץ לפתיחה)`;
+              }
+
               const times = data.hourly.time;
               const temps = data.hourly.temperature_2m;
               const codes = data.hourly.weather_code;
@@ -2314,7 +2377,7 @@
               let html = '';
 
               for (let i = nowIndex; i < nowIndex + 24 && i < times.length; i++) {
-                const timeStr = times[i].substring(11, 16); // פורמט HH:MM
+                const timeStr = times[i].substring(11, 16);
                 const t = Math.round(temps[i]);
                 const w = getWeatherIconAndDesc(codes[i]);
 
