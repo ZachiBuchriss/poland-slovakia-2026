@@ -1404,9 +1404,8 @@
       🇨🇿 🇸🇰 🇵🇱 טיול סלובקיה ופולין 2026 • שנזכה לנסיעות טובות!
     </footer>
 
-    <script>
-      // Google Drive Apps Script URL
-      const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz7i1tLp5gG4Lz9Zk6IdrRmPIokgfF85F8UKPmiwaFWS6hNmRocJd10SpDm71kw0hktpw/exec";
+   <script>
+      const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwlI499giYfYupYwAh1kv4Fv4BcoczhfbMSTfb0kRZhuQl99BGYG_qDzsQJizbvf-CBIA/exec";
 
       function switchTab(tab) {
         document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
@@ -1502,77 +1501,90 @@
         });
       }
 
+      // משיכת כל התמונות מהדרייב והצגתן לכל המכשירים
+      function loadPhotosFromDrive() {
+        fetch(GOOGLE_SCRIPT_URL)
+          .then(res => res.json())
+          .then(data => {
+            if (data.status === 'success' && data.photos) {
+              for (let dayNum in data.photos) {
+                localStorage.setItem('trip_photos_day_' + dayNum, JSON.stringify(data.photos[dayNum]));
+                renderPhotosForDay(dayNum);
+              }
+            }
+          })
+          .catch(err => console.log('שגיאה בטעינת תמונות מהדרייב'));
+      }
+
+      // הוספת תמיכה בבחירה מרובה (Multiple) והעלאה רצופה
       function uploadCloudPhoto(dayNum) {
         const input = document.createElement('input');
         input.type = 'file';
         input.accept = 'image/*';
-        input.onchange = function(e) {
-          const file = e.target.files[0];
-          if (!file) return;
+        input.multiple = true; // מאפשר בחירת כמה תמונות יחד!
+        
+        input.onchange = async function(e) {
+          const files = e.target.files;
+          if (!files || files.length === 0) return;
 
           const btn = document.querySelector(`#day-card-${dayNum} .upload-photo-btn`);
           const originalText = btn ? btn.textContent : '';
-          if (btn) btn.textContent = '⏳ מעלה ל-Google Drive...';
+          
+          for (let i = 0; i < files.length; i++) {
+            const file = files[i];
+            if (btn) btn.textContent = `⏳ מעלה ${i + 1} מתוך ${files.length}...`;
 
-          const reader = new FileReader();
-          reader.onload = function(event) {
-            const img = new Image();
-            img.onload = function() {
-              const canvas = document.createElement('canvas');
-              let width = img.width;
-              let height = img.height;
-              const max_size = 1000;
+            await new Promise((resolve) => {
+              const reader = new FileReader();
+              reader.onload = function(event) {
+                const img = new Image();
+                img.onload = function() {
+                  const canvas = document.createElement('canvas');
+                  let width = img.width;
+                  let height = img.height;
+                  const max_size = 1000;
 
-              if (width > height) {
-                if (width > max_size) {
-                  height *= max_size / width;
-                  width = max_size;
-                }
-              } else {
-                if (height > max_size) {
-                  width *= max_size / height;
-                  height = max_size;
-                }
-              }
+                  if (width > height) {
+                    if (width > max_size) { height *= max_size / width; width = max_size; }
+                  } else {
+                    if (height > max_size) { width *= max_size / height; height = max_size; }
+                  }
 
-              canvas.width = width;
-              canvas.height = height;
-              const ctx = canvas.getContext('2d');
-              ctx.drawImage(img, 0, 0, width, height);
-              
-              const dataUrl = canvas.toDataURL('image/jpeg', 0.75);
-              const base64Data = dataUrl.split(',')[1];
+                  canvas.width = width;
+                  canvas.height = height;
+                  const ctx = canvas.getContext('2d');
+                  ctx.drawImage(img, 0, 0, width, height);
+                  
+                  const dataUrl = canvas.toDataURL('image/jpeg', 0.75);
+                  const base64Data = dataUrl.split(',')[1];
 
-              const params = new URLSearchParams();
-              params.append('base64', base64Data);
-              params.append('fileName', `Day_${dayNum}_${Date.now()}.jpg`);
-              params.append('mimeType', 'image/jpeg');
+                  const params = new URLSearchParams();
+                  params.append('base64', base64Data);
+                  params.append('fileName', `Day_${dayNum}_${Date.now()}_${i}.jpg`);
+                  params.append('mimeType', 'image/jpeg');
+                  params.append('dayNum', dayNum);
 
-              fetch(GOOGLE_SCRIPT_URL, {
-                method: 'POST',
-                body: params
-              })
-              .then(res => res.json())
-              .then(data => {
-                if (data.status === 'success') {
-                  let photos = JSON.parse(localStorage.getItem('trip_photos_day_' + dayNum) || '[]');
-                  photos.push(dataUrl);
-                  localStorage.setItem('trip_photos_day_' + dayNum, JSON.stringify(photos));
-                  renderPhotosForDay(dayNum);
-                  alert('🎉 התמונה הועלתה בהצלחה ונשמרה ב-Google Drive!');
-                } else {
-                  alert('שגיאה מהשרת: ' + (data.message || 'לא ידועה'));
-                }
-                if (btn) btn.textContent = originalText;
-              })
-              .catch(err => {
-                alert('שגיאה בתקשורת מול השרת: ' + err);
-                if (btn) btn.textContent = originalText;
-              });
-            };
-            img.src = event.target.result;
-          };
-          reader.readAsDataURL(file);
+                  fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    body: params
+                  })
+                  .then(res => res.json())
+                  .then(data => {
+                    resolve();
+                  })
+                  .catch(err => {
+                    resolve();
+                  });
+                };
+                img.src = event.target.result;
+              };
+              reader.readAsDataURL(file);
+            });
+          }
+
+          if (btn) btn.textContent = originalText;
+          loadPhotosFromDrive(); // רענון וטעינת כל התמונות מחדש לכולם
+          alert('🎉 כל התמונות נבחרו, הועלו וסונכרנו ל-Google Drive בהצלחה!');
         };
         input.click();
       }
@@ -1669,9 +1681,8 @@
           wrapper.appendChild(gmapBtn);
         });
 
-        for (let d = 0; d <= 14; d++) {
-          renderPhotosForDay(d);
-        }
+        // טעינת כל התמונות מהדרייב אוטומטית בפתיחת האפליקציה בכל מכשיר
+        loadPhotosFromDrive();
       });
     </script>
   </body>
