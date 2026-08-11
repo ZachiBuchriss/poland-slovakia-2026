@@ -132,7 +132,15 @@
         text-align: center;
         border-bottom: 1px solid var(--border);
       }
-      .hero-flag { font-size: 28px; letter-spacing: 6px; margin-bottom: 6px; }
+      .hero-logo {
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 10px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        border: 2px solid var(--accent);
+      }
       .hero h1 { font-size: 22px; font-weight: 900; }
       .hero p { font-size: 13px; color: var(--sub); margin-top: 4px; }
       .hero-tags { display: flex; justify-content: center; gap: 6px; margin-top: 10px; flex-wrap: wrap; }
@@ -460,9 +468,7 @@
     <!-- PAGE 1: ITINERARY -->
     <div id="page-trip" class="page active">
       <div class="hero">
-        <div class="hero-flag">
-          🇸🇰 🇵🇱
-        </div>
+        <img src="icon.png" alt="משפחת בוכריס 2026" class="hero-logo" />
         <h1>
           מסלול הטיול – 15 ימים
         </h1>
@@ -2270,7 +2276,7 @@
       🇨🇿 🇸🇰 🇵🇱 טיול סלובקיה ופולין 2026 • שנזכה לנסיעות טובות!
     </footer>
     <script>
-      const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx9cgYzDvyQW3XdGiv4xnTif8Q3Yd5KqTRXiLg6Bk3Il0PTLW5WSF1wCPjg6ZYWSIBdyQ/exec";
+      const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwlI499giYfYupYwAh1kv4Fv4BcoczhfbMSTfb0kRZhuQl99BGYG_qDzsQJizbvf-CBIA/exec";
 
       function switchTab(tab) {
         document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
@@ -2339,14 +2345,13 @@
         });
       }
 
-      // פונקציה לטעינת מזג אוויר שעתי חי מה-API לפי אזורים
       async function fetchHourlyWeatherWidgets() {
         const locations = [
-          { id: 'ww-bystra', lat: 49.654, lng: 19.762 },       // בייסטרה / זאקופנה
-          { id: 'ww-zator', lat: 49.996, lng: 19.435 },       // זאטור / אנרג'ילנדיה
-          { id: 'ww-krakow', lat: 50.0647, lng: 19.9450 },    // קרקוב
-          { id: 'ww-liptovsky', lat: 49.083, lng: 19.615 },   // ליפטובסקי / טטרות
-          { id: 'ww-bratislava', lat: 48.1486, lng: 17.1077 } // ברטיסלבה
+          { id: 'ww-bystra', lat: 49.654, lng: 19.762 },
+          { id: 'ww-zator', lat: 49.996, lng: 19.435 },
+          { id: 'ww-krakow', lat: 50.0647, lng: 19.9450 },
+          { id: 'ww-liptovsky', lat: 49.083, lng: 19.615 },
+          { id: 'ww-bratislava', lat: 48.1486, lng: 17.1077 }
         ];
 
         let firstTemp = '';
