@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-      טיול סלובקיה ופולין 2026 - צח בוכריס
+      טיול סלובקיה ופולין 2026 - משפחת בוכריס
     </title>
     <link rel="manifest" href="manifest.json" />
     <meta name="theme-color" content="#2D6A4F" />
@@ -138,19 +138,63 @@
       .hero-tags { display: flex; justify-content: center; gap: 6px; margin-top: 10px; flex-wrap: wrap; }
       .tag { background: rgba(244,162,97,0.15); border: 1px solid rgba(244,162,97,0.3); color: var(--accent); font-size: 11px; font-weight: 600; padding: 3px 8px; border-radius: 20px; }
 
+      /* עיצוב ווידג'טי מזג אוויר שעתיים מתקדמים */
       .info-bar {
         background: var(--card);
         border-bottom: 1px solid var(--border);
-        padding: 12px 16px;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        padding: 12px 10px;
+        display: flex;
+        flex-direction: column;
         gap: 10px;
-        text-align: center;
-        margin-bottom: 16px; /* רווח מורגש בין ה-Info Bar לימים למטה */
+        margin-bottom: 16px;
       }
-      .info-item { display: flex; flex-direction: column; gap: 2px; }
-      .info-label { font-size: 10px; color: var(--sub); text-transform: uppercase; }
-      .info-value { font-size: 12px; font-weight: 600; color: var(--text); }
+      .weather-widget {
+        background: rgba(255,255,255,0.03);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 8px 10px;
+      }
+      .ww-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 6px;
+      }
+      .ww-title { font-size: 12px; font-weight: 800; color: var(--accent); }
+      .ww-current { font-size: 12px; font-weight: 700; color: var(--text); }
+      
+      /* רשימת שעות גללה הצידה */
+      .ww-hourly-scroll {
+        display: flex;
+        gap: 8px;
+        overflow-x: auto;
+        padding-bottom: 4px;
+        scrollbar-width: thin;
+        scrollbar-color: var(--border) transparent;
+      }
+      .ww-hourly-scroll::-webkit-scrollbar { height: 4px; }
+      .ww-hourly-scroll::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+
+      .ww-hour-card {
+        background: var(--bg);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 6px 8px;
+        min-width: 55px;
+        text-align: center;
+        flex-shrink: 0;
+      }
+      .ww-time { font-size: 10px; color: var(--sub); font-weight: 600; }
+      .ww-icon { font-size: 14px; margin: 2px 0; }
+      .ww-temp { font-size: 12px; font-weight: 800; color: var(--text); }
+
+      .ww-links {
+        display: flex;
+        justify-content: space-around;
+        font-size: 11px;
+        padding-top: 6px;
+        border-top: 1px dashed var(--border);
+      }
       .info-link { font-size: 11px; font-weight: 600; color: var(--blue); text-decoration: none; }
 
       .section-header { display: flex; align-items: center; gap: 8px; padding: 16px 16px 8px; }
@@ -397,26 +441,61 @@
           <span class="tag">🏰 זאקופנה וקרקוב</span>
         </div>
       </div>
+
+      <!-- ווידג'טי מזג אוויר שעתיים לפי אזורים -->
       <div class="info-bar">
-        <div class="info-item">
-          <span class="info-label">אגרות כביש</span>
-          <a class="info-link" href="https://eznamka.sk" target="_blank">SK: eznamka.sk ↗</a>
-          <a class="info-link" href="https://autopay.pl/en" target="_blank">PL: autopay.pl ↗</a>
+        <!-- Bystra / Zakopane -->
+        <div class="weather-widget" id="ww-bystra">
+          <div class="ww-header">
+            <span class="ww-title">🌲 זאקופנה / בייסטרה</span>
+            <span class="ww-current">טוען...</span>
+          </div>
+          <div class="ww-hourly-scroll">טוען תחזית שעתית...</div>
         </div>
-        <div class="info-item">
-          <span class="info-label">🌤️ מזג אוויר באזורים</span>
-          <a class="info-link" href="https://www.accuweather.com/en/pl/bystra-podhalanska/269152/weather-forecast/269152" target="_blank">Bystra / Zator ↗</a>
-          <a class="info-link" href="https://www.accuweather.com/en/sk/liptovsky-mikulas/295982/weather-forecast/295982" target="_blank">Liptovský Mikuláš ↗</a>
+
+        <!-- Zator / Energylandia -->
+        <div class="weather-widget" id="ww-zator">
+          <div class="ww-header">
+            <span class="ww-title">🎢 זאטור / אנרג'ילנדיה</span>
+            <span class="ww-current">טוען...</span>
+          </div>
+          <div class="ww-hourly-scroll">טוען תחזית שעתית...</div>
         </div>
-        <div class="info-item">
-          <span class="info-label">חירום</span>
-          <span class="info-value">📞 112</span>
+
+        <!-- Krakow -->
+        <div class="weather-widget" id="ww-krakow">
+          <div class="ww-header">
+            <span class="ww-title">🏰 קרקוב</span>
+            <span class="ww-current">טוען...</span>
+          </div>
+          <div class="ww-hourly-scroll">טוען תחזית שעתית...</div>
         </div>
-        <div class="info-item">
-          <span class="info-label">ברטיסלבה</span>
-          <a class="info-link" href="https://www.accuweather.com/en/sk/bratislava/2972/weather-forecast/2972" target="_blank">מזג אוויר ↗</a>
+
+        <!-- Tatras / Liptovsky Mikulas -->
+        <div class="weather-widget" id="ww-liptovsky">
+          <div class="ww-header">
+            <span class="ww-title">🏔️ ליפטובסקי / טטרות</span>
+            <span class="ww-current">טוען...</span>
+          </div>
+          <div class="ww-hourly-scroll">טוען תחזית שעתית...</div>
+        </div>
+
+        <!-- Bratislava -->
+        <div class="weather-widget" id="ww-bratislava">
+          <div class="ww-header">
+            <span class="ww-title">🏙️ ברטיסלבה</span>
+            <span class="ww-current">טוען...</span>
+          </div>
+          <div class="ww-hourly-scroll">טוען תחזית שעתית...</div>
+        </div>
+
+        <div class="ww-links">
+          <a class="info-link" href="https://eznamka.sk" target="_blank">אגרת כביש SK ↗</a>
+          <a class="info-link" href="https://autopay.pl/en" target="_blank">אגרת כביש PL ↗</a>
+          <span style="color:var(--sub)">📞 חירום: 112</span>
         </div>
       </div>
+
       <!-- יום 0 -->
       <div class="day-card" id="day-card-0">
         <div class="day-header sk">
@@ -2145,7 +2224,7 @@
       🇨🇿 🇸🇰 🇵🇱 טיול סלובקיה ופולין 2026 • שנזכה לנסיעות טובות!
     </footer>
     <script>
-      const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwQs5aN9cklm4mmFlwtVQzUx50R80ZSm-toLVIIzmCbMorQE5appdHTa7tSGQUWfdckSQ/exec";
+      const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwlI499giYfYupYwAh1kv4Fv4BcoczhfbMSTfb0kRZhuQl99BGYG_qDzsQJizbvf-CBIA/exec";
 
       function switchTab(tab) {
         document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
@@ -2202,6 +2281,75 @@
         });
       }
 
+      // פונקציה לטעינת מזג אוויר שעתי חי מה-API לפי אזורים
+      async function fetchHourlyWeatherWidgets() {
+        const locations = [
+          { id: 'ww-bystra', lat: 49.654, lng: 19.762 },       // בייסטרה / זאקופנה
+          { id: 'ww-zator', lat: 49.996, lng: 19.435 },       // זאטור / אנרג'ילנדיה
+          { id: 'ww-krakow', lat: 50.0647, lng: 19.9450 },    // קרקוב
+          { id: 'ww-liptovsky', lat: 49.083, lng: 19.615 },   // ליפטובסקי / טטרות
+          { id: 'ww-bratislava', lat: 48.1486, lng: 17.1077 } // ברטיסלבה
+        ];
+
+        for (let loc of locations) {
+          try {
+            const res = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${loc.lat}&longitude=${loc.lng}&hourly=temperature_2m,weather_code&current=temperature_2m,weather_code&timezone=auto`);
+            const data = await res.json();
+            
+            const container = document.getElementById(loc.id);
+            if (!container) continue;
+
+            if (data && data.current && data.hourly) {
+              // עדכון טמפרטורה נוכחית בכותרת
+              const curTemp = Math.round(data.current.temperature_2m);
+              const curDesc = getWeatherIconAndDesc(data.current.weather_code);
+              container.querySelector('.ww-current').textContent = `${curTemp}°C • ${curDesc.text}`;
+
+              // יצירת רשימת שעות (הצגת 24 שעות מהשעה הנוכחית)
+              const times = data.hourly.time;
+              const temps = data.hourly.temperature_2m;
+              const codes = data.hourly.weather_code;
+
+              const nowIndex = new Date().getHours();
+              let html = '';
+
+              for (let i = nowIndex; i < nowIndex + 24 && i < times.length; i++) {
+                const timeStr = times[i].substring(11, 16); // פורמט HH:MM
+                const t = Math.round(temps[i]);
+                const w = getWeatherIconAndDesc(codes[i]);
+
+                html += `
+                  <div class="ww-hour-card">
+                    <div class="ww-time">${timeStr}</div>
+                    <div class="ww-icon">${w.icon}</div>
+                    <div class="ww-temp">${t}°C</div>
+                  </div>
+                `;
+              }
+              container.querySelector('.ww-hourly-scroll').innerHTML = html;
+            }
+          } catch (e) {
+            console.log('שגיאה בטעינת תחזית שעתית', e);
+          }
+        }
+      }
+
+      function getWeatherIconAndDesc(code) {
+        const map = {
+          0: { icon: '☀️', text: 'בהיר' },
+          1: { icon: '🌤️', text: 'מעונן חלקית' },
+          2: { icon: '⛅', text: 'מעונן חלקית' },
+          3: { icon: '☁️', text: 'מעונן' },
+          45: { icon: '🌫️', text: 'ערפל' },
+          51: { icon: '🌦️', text: 'טפטוף' },
+          61: { icon: '🌧️', text: 'גשם קל' },
+          63: { icon: '🌧️', text: 'גשם' },
+          80: { icon: '🌧️', text: 'ממטרים' },
+          95: { icon: '⛈️', text: 'סופה' }
+        };
+        return map[code] || { icon: '🌤️', text: 'נוח' };
+      }
+
       let mapInstance = null;
       function initMap() {
         if (mapInstance) {
@@ -2216,7 +2364,7 @@
           attribution: '© OpenStreetMap'
         }).addTo(mapInstance);
 
-        const locations = [
+        const mapLocations = [
           { name: "✈️ נמל תעופה ברטיסלבה", lat: 48.1702, lng: 17.2127 },
           { name: "🏡 Bystra Podhalanska (בית נופש 1)", lat: 49.654, lng: 19.762 },
           { name: "🏨 Sloneczne Wzgorze Zator", lat: 49.996, lng: 19.435 },
@@ -2234,7 +2382,7 @@
           { name: "🥩 מסעדת Route 66 (ליפטובסקי)", lat: 49.084, lng: 19.612 }
         ];
 
-        locations.forEach(loc => {
+        mapLocations.forEach(loc => {
           L.marker([loc.lat, loc.lng])
             .addTo(mapInstance)
             .bindPopup(`<b>${loc.name}</b><br><a href="https://waze.com/ul?q=${encodeURIComponent(loc.name)}" target="_blank">🗺️ פתח ב-Waze</a>`);
@@ -2473,6 +2621,7 @@
         });
 
         loadPhotosFromDrive();
+        fetchHourlyWeatherWidgets();
       });
     </script>
   </body>
