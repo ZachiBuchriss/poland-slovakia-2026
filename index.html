@@ -424,6 +424,9 @@
       .item-sub { font-size: 11px; font-weight: 400; color: var(--sub); margin-top: 2px; }
       .item-desc { font-size: 12px; font-weight: 400; color: var(--sub); line-height: 1.4; }
 
+      .reset-cache-container { text-align: center; padding: 20px; }
+      .reset-cache-btn { background: rgba(192,57,43,0.2); border: 1px solid var(--pl); color: #ff6b6b; padding: 8px 16px; border-radius: 10px; font-size: 12px; font-weight: 700; cursor: pointer; font-family: 'Heebo', sans-serif; }
+
       footer { text-align: center; padding: 20px; font-size: 11px; font-weight: 400; color: var(--sub); }
     </style>
   </head>
@@ -1618,6 +1621,11 @@
           </div>
         </div>
       </div>
+      <div class="reset-cache-container">
+        <button class="reset-cache-btn" onclick="hardResetCache()">
+          🗑️ נקה זיכרון מטמון ואפס תמונות שחזרו
+        </button>
+      </div>
     </div>
     <!-- PAGE 2: HOTELS -->
     <div id="page-hotels" class="page">
@@ -2688,6 +2696,7 @@
       function saveJournal(dayNum) {
         const text = document.getElementById('journal-text-' + dayNum).value;
         globalJournals[dayNum] = text;
+        localStorage.setItem('trip_journal_day_' + dayNum, text);
 
         const btn = document.querySelector(`#day-card-${dayNum} .save-journal-btn`);
         const originalText = btn ? btn.textContent : '💾 שמור יומן לענן';
@@ -2742,10 +2751,12 @@
                   });
 
                   let deletedSet = JSON.parse(localStorage.getItem('trip_deleted_photos_day_' + dayNum) || '[]');
-                  let filteredCloud = cloudUrls.filter(url => !deletedSet.includes(url));
+                  
+                  // סינון מוחלט של כל תמונה שנמחקה בעבר ע"י המשתמש
+                  let validCloudUrls = cloudUrls.filter(url => !deletedSet.includes(url));
 
                   let localPhotos = JSON.parse(localStorage.getItem('trip_photos_day_' + dayNum) || '[]');
-                  let merged = Array.from(new Set([...localPhotos, ...filteredCloud]));
+                  let merged = Array.from(new Set([...localPhotos, ...validCloudUrls]));
                   let finalPhotos = merged.filter(url => !deletedSet.includes(url));
 
                   localStorage.setItem('trip_photos_day_' + dayNum, JSON.stringify(finalPhotos));
@@ -2758,6 +2769,7 @@
                   const txtArea = document.getElementById('journal-text-' + dayNum);
                   if (txtArea && globalJournals[dayNum]) {
                     txtArea.value = globalJournals[dayNum];
+                    localStorage.setItem('trip_journal_day_' + dayNum, globalJournals[dayNum]);
                   }
                 }
               }
@@ -2918,6 +2930,18 @@
         });
       }
 
+      function hardResetCache() {
+        if (confirm('האם לנקות את כל נתוני המטמון המקומיים ולאפס את רשימות התמונות והיומנים בדפדפן זה?')) {
+          for (let i = 0; i <= 14; i++) {
+            localStorage.removeItem('trip_photos_day_' + i);
+            localStorage.removeItem('trip_deleted_photos_day_' + i);
+            localStorage.removeItem('trip_journal_day_' + i);
+          }
+          alert('הזיכרון נקי! טוען מחדש...');
+          location.reload();
+        }
+      }
+
       document.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('a.act-nav').forEach(function(wazeBtn) {
           const wazeUrl = wazeBtn.href;
@@ -2938,8 +2962,14 @@
           wrapper.appendChild(gmapBtn);
         });
 
+        // טעינת טקסטים מהזיכרון המקומי לתיבות היומן מיד עם פתיחת העמוד
         for (let i = 0; i <= 14; i++) {
           renderPhotosForDay(i);
+          const savedJournal = localStorage.getItem('trip_journal_day_' + i);
+          const txtArea = document.getElementById('journal-text-' + i);
+          if (txtArea && savedJournal) {
+            txtArea.value = savedJournal;
+          }
         }
 
         loadPhotosFromDrive();
