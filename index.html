@@ -15,7 +15,7 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
     </script>
     <style>
-      @import url(&#39;https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600;800;900&amp;display=swap&#39;);
+      @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600;800;900&display=swap');
 
       :root {
         --sk: #2D6A4F;
@@ -31,7 +31,7 @@
         --green: #52B788;
       }
 
-      [data-theme=&#34;light&#34;] {
+      [data-theme="light"] {
         --bg: #F7F4EF;
         --card: #FFFFFF;
         --text: #1A1A1A;
@@ -43,7 +43,7 @@
       * { box-sizing: border-box; margin: 0; padding: 0; }
 
       body {
-        font-family: &#39;Heebo&#39;, sans-serif;
+        font-family: 'Heebo', sans-serif;
         background: var(--bg);
         color: var(--text);
         max-width: 520px;
@@ -65,7 +65,7 @@
         border-bottom: 1px solid var(--border);
       }
 
-      [data-theme=&#34;light&#34;] .header-bar {
+      [data-theme="light"] .header-bar {
         background: rgba(247, 244, 239, 0.85);
       }
 
@@ -82,7 +82,7 @@
         display: flex;
         align-items: center;
         gap: 4px;
-        font-family: &#39;Heebo&#39;, sans-serif;
+        font-family: 'Heebo', sans-serif;
       }
 
       .tab-nav {
@@ -102,7 +102,7 @@
         flex: 1;
         min-width: 62px;
         padding: 10px 4px;
-        font-family: &#39;Heebo&#39;, sans-serif;
+        font-family: 'Heebo', sans-serif;
         font-size: 11px;
         font-weight: 700;
         color: var(--sub);
@@ -164,7 +164,7 @@
         align-items: center;
         cursor: pointer;
         color: var(--text);
-        font-family: &#39;Heebo&#39;, sans-serif;
+        font-family: 'Heebo', sans-serif;
       }
       .weather-main-title {
         display: flex;
@@ -315,7 +315,7 @@
         justify-content: space-between;
         align-items: center;
         font-size: 12px;
-        font-family: &#39;Heebo&#39;, sans-serif;
+        font-family: 'Heebo', sans-serif;
       }
       .journal-content {
         margin-top: 10px;
@@ -330,7 +330,7 @@
         border-radius: 8px;
         padding: 8px;
         resize: vertical;
-        font-family: &#39;Heebo&#39;, sans-serif;
+        font-family: 'Heebo', sans-serif;
         font-size: 12px;
       }
       .save-journal-btn {
@@ -343,7 +343,7 @@
         cursor: pointer;
         font-size: 11px;
         font-weight: 700;
-        font-family: &#39;Heebo&#39;, sans-serif;
+        font-family: 'Heebo', sans-serif;
       }
 
       .day-photos-container {
@@ -370,7 +370,7 @@
         font-size: 10px;
         font-weight: 700;
         cursor: pointer;
-        font-family: &#39;Heebo&#39;, sans-serif;
+        font-family: 'Heebo', sans-serif;
       }
       .photo-grid {
         display: grid;
@@ -438,43 +438,43 @@
       </button>
     </div>
     <nav class="tab-nav">
-      <button class="tab-btn active" onclick="switchTab(&#39;trip&#39;)">
+      <button class="tab-btn active" onclick="switchTab('trip')">
         <span>        🗓️
 </span>
         <span>        לו&#34;ז
 </span>
       </button>
-      <button class="tab-btn" onclick="switchTab(&#39;hotels&#39;)">
+      <button class="tab-btn" onclick="switchTab('hotels')">
         <span>        🏨
 </span>
         <span>        מלונות
 </span>
       </button>
-      <button class="tab-btn" onclick="switchTab(&#39;restaurants&#39;)">
+      <button class="tab-btn" onclick="switchTab('restaurants')">
         <span>        🍽️
 </span>
         <span>        מסעדות
 </span>
       </button>
-      <button class="tab-btn" onclick="switchTab(&#39;attractions&#39;)">
+      <button class="tab-btn" onclick="switchTab('attractions')">
         <span>        🎯
 </span>
         <span>        אטרקציות
 </span>
       </button>
-      <button class="tab-btn" onclick="switchTab(&#39;shopping&#39;)">
+      <button class="tab-btn" onclick="switchTab('shopping')">
         <span>        🛒
 </span>
         <span>        קניות
 </span>
       </button>
-      <button class="tab-btn" onclick="switchTab(&#39;budget&#39;)">
+      <button class="tab-btn" onclick="switchTab('budget')">
         <span>        💰
 </span>
         <span>        תקציב
 </span>
       </button>
-      <button class="tab-btn" onclick="switchTab(&#39;map&#39;)">
+      <button class="tab-btn" onclick="switchTab('map')">
         <span>        🗺️
 </span>
         <span>        מפה
@@ -627,7 +627,7 @@
 </span>
           </button>
           <div id="journal-content-0" class="journal-content">
-            <textarea id="journal-text-0" placeholder="כתוב כאן חוויות, מקומות שהייתם, זיכרונות...">
+            <textarea id="journal-text-0" placeholder="כתוב כאן איך עבר היום... (חוויות, מקומות שהייתם, זיכרונות)">
             </textarea>
             <button class="save-journal-btn" onclick="saveJournal(0)">
               💾 שמור יומן לענן
@@ -701,7 +701,7 @@
 </span>
           </button>
           <div id="journal-content-1" class="journal-content">
-            <textarea id="journal-text-1" placeholder="כתוב כאן חוויות, מקומות שהייתם, זיכרונות...">
+            <textarea id="journal-text-1" placeholder="כתוב כאן איך עבר היום... (חוויות, מקומות שהייתם, זיכרונות)">
             </textarea>
             <button class="save-journal-btn" onclick="saveJournal(1)">
               💾 שמור יומן לענן
@@ -777,7 +777,7 @@
 </span>
           </button>
           <div id="journal-content-2" class="journal-content">
-            <textarea id="journal-text-2" placeholder="כתוב כאן חוויות, מקומות שהייתם, זיכרונות...">
+            <textarea id="journal-text-2" placeholder="כתוב כאן איך עבר היום... (חוויות, מקומות שהייתם, זיכרונות)">
             </textarea>
             <button class="save-journal-btn" onclick="saveJournal(2)">
               💾 שמור יומן לענן
@@ -853,7 +853,7 @@
 </span>
           </button>
           <div id="journal-content-3" class="journal-content">
-            <textarea id="journal-text-3" placeholder="כתוב כאן חוויות, מקומות שהייתם, זיכרונות...">
+            <textarea id="journal-text-3" placeholder="כתוב כאן איך עבר היום... (חוויות, מקומות שהייתם, זיכרונות)">
             </textarea>
             <button class="save-journal-btn" onclick="saveJournal(3)">
               💾 שמור יומן לענן
@@ -927,7 +927,7 @@
 </span>
           </button>
           <div id="journal-content-4" class="journal-content">
-            <textarea id="journal-text-4" placeholder="כתוב כאן חוויות, מקומות שהייתם, זיכרונות...">
+            <textarea id="journal-text-4" placeholder="כתוב כאן איך עבר היום... (חוויות, מקומות שהייתם, זיכרונות)">
             </textarea>
             <button class="save-journal-btn" onclick="saveJournal(4)">
               💾 שמור יומן לענן
@@ -1001,7 +1001,7 @@
 </span>
           </button>
           <div id="journal-content-5" class="journal-content">
-            <textarea id="journal-text-5" placeholder="כתוב כאן חוויות, מקומות שהייתם, זיכרונות...">
+            <textarea id="journal-text-5" placeholder="כתוב כאן איך עבר היום... (חוויות, מקומות שהייתם, זיכרונות)">
             </textarea>
             <button class="save-journal-btn" onclick="saveJournal(5)">
               💾 שמור יומן לענן
@@ -1075,7 +1075,7 @@
 </span>
           </button>
           <div id="journal-content-6" class="journal-content">
-            <textarea id="journal-text-6" placeholder="כתוב כאן חוויות, מקומות שהייתם, זיכרונות...">
+            <textarea id="journal-text-6" placeholder="כתוב כאן איך עבר היום... (חוויות, מקומות שהייתם, זיכרונות)">
             </textarea>
             <button class="save-journal-btn" onclick="saveJournal(6)">
               💾 שמור יומן לענן
@@ -1133,7 +1133,7 @@
 </span>
           </button>
           <div id="journal-content-7" class="journal-content">
-            <textarea id="journal-text-7" placeholder="כתוב כאן חוויות, מקומות שהייתם, זיכרונות...">
+            <textarea id="journal-text-7" placeholder="כתוב כאן איך עבר היום... (חוויות, מקומות שהייתם, זיכרונות)">
             </textarea>
             <button class="save-journal-btn" onclick="saveJournal(7)">
               💾 שמור יומן לענן
@@ -1205,7 +1205,7 @@
 </span>
           </button>
           <div id="journal-content-8" class="journal-content">
-            <textarea id="journal-text-8" placeholder="כתוב כאן חוויות, מקומות שהייתם, זיכרונות...">
+            <textarea id="journal-text-8" placeholder="כתוב כאן איך עבר היום... (חוויות, מקומות שהייתם, זיכרונות)">
             </textarea>
             <button class="save-journal-btn" onclick="saveJournal(8)">
               💾 שמור יומן לענן
@@ -1279,7 +1279,7 @@
 </span>
           </button>
           <div id="journal-content-9" class="journal-content">
-            <textarea id="journal-text-9" placeholder="כתוב כאן חוויות, מקומות שהייתם, זיכרונות...">
+            <textarea id="journal-text-9" placeholder="כתוב כאן איך עבר היום... (חוויות, מקומות שהייתם, זיכרונות)">
             </textarea>
             <button class="save-journal-btn" onclick="saveJournal(9)">
               💾 שמור יומן לענן
@@ -1353,7 +1353,7 @@
 </span>
           </button>
           <div id="journal-content-10" class="journal-content">
-            <textarea id="journal-text-10" placeholder="כתוב כאן חוויות, מקומות שהייתם, זיכרונות...">
+            <textarea id="journal-text-10" placeholder="כתוב כאן איך עבר היום... (חוויות, מקומות שהייתם, זיכרונות)">
             </textarea>
             <button class="save-journal-btn" onclick="saveJournal(10)">
               💾 שמור יומן לענן
@@ -1411,7 +1411,7 @@
 </span>
           </button>
           <div id="journal-content-11" class="journal-content">
-            <textarea id="journal-text-11" placeholder="כתוב כאן חוויות, מקומות שהייתם, זיכרונות...">
+            <textarea id="journal-text-11" placeholder="כתוב כאן איך עבר היום... (חוויות, מקומות שהייתם, זיכרונות)">
             </textarea>
             <button class="save-journal-btn" onclick="saveJournal(11)">
               💾 שמור יומן לענן
@@ -1467,7 +1467,7 @@
 </span>
           </button>
           <div id="journal-content-12" class="journal-content">
-            <textarea id="journal-text-12" placeholder="כתוב כאן חוויות, מקומות שהייתם, זיכרונות...">
+            <textarea id="journal-text-12" placeholder="כתוב כאן איך עבר היום... (חוויות, מקומות שהייתם, זיכרונות)">
             </textarea>
             <button class="save-journal-btn" onclick="saveJournal(12)">
               💾 שמור יומן לענן
@@ -1541,7 +1541,7 @@
 </span>
           </button>
           <div id="journal-content-13" class="journal-content">
-            <textarea id="journal-text-13" placeholder="כתוב כאן חוויות, מקומות שהייתם, זיכרונות...">
+            <textarea id="journal-text-13" placeholder="כתוב כאן איך עבר היום... (חוויות, מקומות שהייתם, זיכרונות)">
             </textarea>
             <button class="save-journal-btn" onclick="saveJournal(13)">
               💾 שמור יומן לענן
@@ -1597,7 +1597,7 @@
 </span>
           </button>
           <div id="journal-content-14" class="journal-content">
-            <textarea id="journal-text-14" placeholder="כתוב כאן חוויות, מקומות שהייתם, זיכרונות...">
+            <textarea id="journal-text-14" placeholder="כתוב כאן איך עבר היום... (חוויות, מקומות שהייתם, זיכרונות)">
             </textarea>
             <button class="save-journal-btn" onclick="saveJournal(14)">
               💾 שמור יומן לענן
@@ -2463,7 +2463,7 @@
         <span id="lightbox-counter">        1 / 1
 </span>
         <div style="display:flex; gap:12px;">
-          <button onclick="deleteCurrentPhoto()" style="background:#C0392B; color:#fff; border:none; padding:6px 12px; border-radius:8px; font-weight:bold; cursor:pointer; font-family:&#39;Heebo&#39;;">
+          <button onclick="deleteCurrentPhoto()" style="background:#C0392B; color:#fff; border:none; padding:6px 12px; border-radius:8px; font-weight:bold; cursor:pointer; font-family:'Heebo';">
             🗑️ מחק תמונה
           </button>
           <button onclick="closeLightbox()" style="background:#2A3A4A; color:#fff; border:none; padding:6px 14px; border-radius:8px; font-weight:bold; cursor:pointer; font-size:16px;">
@@ -2724,8 +2724,7 @@
             if (data.status === 'success') {
               if (data.photos) {
                 for (let dayNum in data.photos) {
-                  // המרת כתובות הדרייב לפורמט ישיר לצפייה חלקה
-                  const fixedPhotos = data.photos[dayNum].map(url => {
+                  const cloudUrls = data.photos[dayNum].map(url => {
                     if (url.includes('drive.google.com') && url.includes('id=')) {
                       const fileIdMatch = url.match(/id=([a-zA-Z0-9_-]+)/);
                       if (fileIdMatch && fileIdMatch[1]) {
@@ -2740,7 +2739,10 @@
                     return url;
                   });
 
-                  localStorage.setItem('trip_photos_day_' + dayNum, JSON.stringify(fixedPhotos));
+                  // מיזוג חכם: שמירה על תמונות מקומיות שלא נמחקו וסינכרון מול הענן בלי להחזיר תמונות שנמחקו במפורש
+                  let localPhotos = JSON.parse(localStorage.getItem('trip_photos_day_' + dayNum) || '[]');
+                  let merged = Array.from(new Set([...localPhotos, ...cloudUrls]));
+                  localStorage.setItem('trip_photos_day_' + dayNum, JSON.stringify(merged));
                   renderPhotosForDay(dayNum);
                 }
               }
@@ -2748,7 +2750,7 @@
                 globalJournals = data.journal;
                 for (let dayNum in globalJournals) {
                   const txtArea = document.getElementById('journal-text-' + dayNum);
-                  if (txtArea) {
+                  if (txtArea && globalJournals[dayNum]) {
                     txtArea.value = globalJournals[dayNum];
                   }
                 }
@@ -2917,6 +2919,11 @@
           gmapBtn.target = '_blank';
           wrapper.appendChild(gmapBtn);
         });
+
+        // טעינת תמונות ראשונית ממה שנשמר מקומית כדי שהכל יופיע מיידית ובצורה אחידה
+        for (let i = 0; i <= 14; i++) {
+          renderPhotosForDay(i);
+        }
 
         loadPhotosFromDrive();
         fetchHourlyWeatherWidgets();
